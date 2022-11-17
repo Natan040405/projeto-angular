@@ -10,6 +10,9 @@ import { HeaderBibliotecaComponent } from './header-biblioteca/header-biblioteca
 import { AppCadastroItemAcervoComponent } from './app-cadastro-item-acervo/app-cadastro-item-acervo.component';
 import { AppCadastroSecaoComponent } from './app-cadastro-secao/app-cadastro-secao.component';
 import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro-editora.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
