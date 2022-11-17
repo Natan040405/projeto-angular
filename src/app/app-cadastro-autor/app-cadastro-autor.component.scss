@@ -1,21 +1,25 @@
+
 .cadAutor{
   width: 98%;
-  padding: 30px;
+  padding: 1.7%;
   margin: 0 auto;
 }
-.formulario{
+.frmAutor{
   background-color: white;
   padding: 16px;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
+.row div{
+  display: inline-flex;
+}
 #nomeAutor{
-  width: 20%;
+  width: 30%;
 }
 #descAutor{
-  width: 20%;
+  width: 30%;
 }
-.titulo{
+.titAutor{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
 }

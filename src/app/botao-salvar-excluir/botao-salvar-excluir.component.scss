@@ -1,0 +1,17 @@
+.SalvarExcluir{
+  padding: auto;
+}
+.SalvarExcluir button{
+  margin-right: 1%;
+}
+.SalvarExcluir button:hover{
+  transform: scale(1.1);
+}
+#salvar{
+  background-color: rgb(40, 221, 40);
+  color: #fff;
+}
+#excluir{
+  background-color: rgb(233, 94, 94);
+  color: #fff;
+}
