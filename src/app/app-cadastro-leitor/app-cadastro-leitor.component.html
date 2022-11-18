@@ -1,1 +1,113 @@
-<h1 id="titulo">Cadastro Leitor</h1>
+<section class="cadLeitor">
+  <form class="frmLeitor">
+    <div>
+       <h1 class="titLeitor">Cadastro Item Acervo</h1>
+    </div>
+
+    <div class="linha">
+
+      <div class="coluna01">
+        <div>
+          <mat-form-field id='codLeitor' appearance="fill">
+            <mat-label>Código</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeLeitor" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-checkbox value="M" color="primary">Masculino</mat-checkbox>
+          <mat-checkbox value="F" color="primary">Feminino</mat-checkbox>
+        </div>
+
+
+        <div>
+          <mat-form-field id="cpfLeitor" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+      </div>
+<!-- fim Coluna01 -->
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="rgLeitor" appearance="fill">
+            <mat-label>RG</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="emailLeitor" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <!-- <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                  {{Tipo.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div> -->
+
+        <div>
+          <mat-form-field id="numExemplar" appearance="fill">
+            <mat-label>Número do Exemplar</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="volItem" appearance="fill">
+            <mat-label>Volume</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
+      <!-- fim Coluna 02 -->
+
+      <div class="coluna03">
+
+        <div>
+          <mat-form-field id="anoEdicao" appearance="fill">
+            <mat-label>Ano da Edição</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="secao" appearance="fill">
+            <mat-label>Seção</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="local" appearance="fill">
+            <mat-label>Local</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+    <!-- fim Linha -->
+    <div class="botoes">
+      <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+    </div>
+  </form>
+</section>

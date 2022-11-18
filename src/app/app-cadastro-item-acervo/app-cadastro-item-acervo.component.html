@@ -4,44 +4,118 @@
        <h1 class="titItemAcervo">Cadastro Item Acervo</h1>
     </div>
 
-    <div>
-      <mat-form-field id='codItem' appearance="fill">
-        <mat-label>Código</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
+    <div class="linha">
 
-    <div>
-      <mat-form-field id="nomeItem" appearance="fill">
-        <mat-label>Nome</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
+      <div class="coluna01">
+        <div>
+          <mat-form-field id='codItem' appearance="fill">
+            <mat-label>Código</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
 
-    <div>
-      <mat-form-field id='codLocal' appearance="fill">
-        <mat-label>Código Local</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
+        <div>
+          <mat-form-field id="nomeItem" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
 
-    <div>
-      <mat-form-field id="nomeLocal" appearance="fill">
-        <mat-label>Nome Local</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
+        <div>
+          <mat-form-field id='codLocal' appearance="fill">
+            <mat-label>Código Local</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
 
-    <div>
-      <mat-form-field id="codAutor" appearance="fill">
-        <mat-label>Código Autor</mat-label>
-        <input matInput>
-      </mat-form-field>
-    </div>
+        <div>
+          <mat-form-field id="nomeLocal" appearance="fill">
+            <mat-label>Nome Local</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
 
-    <div>
+        <div>
+          <mat-form-field id="codAutor" appearance="fill">
+            <mat-label>Código Autor</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
 
+      </div>
+<!-- fim Coluna01 -->
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="codEditora" appearance="fill">
+            <mat-label>Código Editora</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="codColeção" appearance="fill">
+            <mat-label>Código Coleção</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                  {{Tipo.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="numExemplar" appearance="fill">
+            <mat-label>Número do Exemplar</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="volItem" appearance="fill">
+            <mat-label>Volume</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
+      <!-- fim Coluna 02 -->
+
+      <div class="coluna03">
+
+        <div>
+          <mat-form-field id="anoEdicao" appearance="fill">
+            <mat-label>Ano da Edição</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="secao" appearance="fill">
+            <mat-label>Seção</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="local" appearance="fill">
+            <mat-label>Local</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
     </div>
-    <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+    <!-- fim Linha -->
+    <div class="botoes">
+      <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+    </div>
   </form>
 </section>

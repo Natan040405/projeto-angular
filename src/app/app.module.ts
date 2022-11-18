@@ -2,7 +2,6 @@ import { AppCadastroLocalComponent } from './app-cadastro-local/app-cadastro-loc
 import { AppCadastroLeitorComponent } from './app-cadastro-leitor/app-cadastro-leitor.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppCadastroAutorComponent } from './app-cadastro-autor/app-cadastro-autor.component';
@@ -15,6 +14,11 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { AppBotaoSalvarExcluirComponent } from './botao-salvar-excluir/botao-salvar-excluir.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { AppBotaoSalvarExcluirComponent } from './botao-salvar-excluir/botao-sal
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

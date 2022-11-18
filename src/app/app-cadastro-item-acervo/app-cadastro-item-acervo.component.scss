@@ -9,13 +9,31 @@
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
 #nomeItem{
-  width: 30%;
+  width: 100%;
 }
 #nomeLocal{
-  width: 30%;
+  width: 100%;
 }
 .titItemAcervo{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
+}
+.coluna01 {
+  width: 31%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 31%;
+  position: relative;
+}
+.coluna03{
+  width: 31%;
+  left: 1%;
+  position: relative;
 }

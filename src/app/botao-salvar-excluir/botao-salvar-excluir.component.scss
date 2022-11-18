@@ -1,9 +1,7 @@
 .SalvarExcluir{
-  padding: auto;
+  margin: auto;
 }
-.SalvarExcluir button{
-  margin-right: 1%;
-}
+
 .SalvarExcluir button:hover{
   transform: scale(1.1);
 }
@@ -11,6 +9,7 @@
   box-shadow: 0 0 8px rgba(40, 221, 40, 10);
 }
 #salvar{
+  margin-right: 1%;
   background-color: rgb(40, 221, 40);
   color: #fff;
 }
