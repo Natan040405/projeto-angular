@@ -7,6 +7,9 @@
 .SalvarExcluir button:hover{
   transform: scale(1.1);
 }
+#salvar:hover{
+  box-shadow: 0 0 8px rgba(40, 221, 40, 10);
+}
 #salvar{
   background-color: rgb(40, 221, 40);
   color: #fff;
@@ -14,4 +17,7 @@
 #excluir{
   background-color: rgb(233, 94, 94);
   color: #fff;
+}
+#excluir:hover{
+  box-shadow: 0 0 8px rgba(233, 94, 94, 10);
 }
