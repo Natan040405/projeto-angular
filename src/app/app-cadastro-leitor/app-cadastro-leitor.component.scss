@@ -1,4 +1,4 @@
-.cadLeito{
+.cadLeitor{
   width: 98%;
   padding: 1.7%;
   margin: 0 auto;
@@ -16,9 +16,18 @@
 #nomeLeitor{
   width: 100%;
 }
-// #nomeL{
-//   width: 100%;
-// }
+#emailLeitor{
+  width: 100%;
+}
+#endRuaLeitor{
+  width: 100%;
+}
+#endBairroLeitor{
+  width: 100%;
+}
+#endCidadeLeitor{
+  width: 100%;
+}
 .titLeitor{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
@@ -35,5 +44,20 @@
 .coluna03{
   width: 31%;
   left: 1%;
+  position: relative;
+}
+
+.feminino{
+  padding-bottom: 9%;
+  padding-top: 4%;
+  left: 8%;
+
+  position: relative;
+}
+.masculino{
+  padding-bottom: 9%;
+  padding-top: 4%;
+  left: 4%;
+
   position: relative;
 }

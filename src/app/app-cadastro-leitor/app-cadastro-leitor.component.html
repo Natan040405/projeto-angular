@@ -7,6 +7,7 @@
     <div class="linha">
 
       <div class="coluna01">
+
         <div>
           <mat-form-field id='codLeitor' appearance="fill">
             <mat-label>Código</mat-label>
@@ -22,16 +23,22 @@
         </div>
 
         <div>
-          <mat-checkbox value="M" color="primary">Masculino</mat-checkbox>
-          <mat-checkbox value="F" color="primary">Feminino</mat-checkbox>
+          <label for="">Sexo: </label>
+          <mat-radio-button class="masculino" value="M" color="primary">Masculino</mat-radio-button>
+          <mat-radio-button class="feminino" value="F" color="primary">Feminino</mat-radio-button>
         </div>
-
 
         <div>
           <mat-form-field id="cpfLeitor" appearance="fill">
             <mat-label>CPF</mat-label>
             <input matInput>
           </mat-form-field>
+        </div>
+
+        <div>
+          <div>
+            <h2>*Data de Nascimento - DatePicker*</h2>
+          </div>
         </div>
 
       </div>
@@ -41,7 +48,7 @@
         <div>
           <mat-form-field id="rgLeitor" appearance="fill">
             <mat-label>RG</mat-label>
-            <input matInput type="text">
+            <input matInput>
           </mat-form-field>
         </div>
 
@@ -52,27 +59,23 @@
           </mat-form-field>
         </div>
 
-        <!-- <div>
-          <mat-form-field id="CbTipoIntem" appearance="fill">
-            <mat-label>Tipo do Item</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
-                  {{Tipo.viewValue}}
-                </mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div> -->
-
         <div>
-          <mat-form-field id="numExemplar" appearance="fill">
-            <mat-label>Número do Exemplar</mat-label>
+          <mat-form-field id="telefLeitor" appearance="fill">
+            <mat-label>Telefone</mat-label>
             <input matInput type="text">
           </mat-form-field>
         </div>
 
         <div>
-          <mat-form-field id="volItem" appearance="fill">
-            <mat-label>Volume</mat-label>
+          <mat-form-field id="cellLeitor" appearance="fill">
+            <mat-label>Celular</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endRuaLeitor" appearance="fill">
+            <mat-label>Rua</mat-label>
             <input matInput type="text">
           </mat-form-field>
         </div>
@@ -83,22 +86,33 @@
       <div class="coluna03">
 
         <div>
-          <mat-form-field id="anoEdicao" appearance="fill">
-            <mat-label>Ano da Edição</mat-label>
+          <mat-form-field id="endBairroLeitor" appearance="fill">
+            <mat-label>Bairro</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endCidadeLeitor" appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endCepLeitor" appearance="fill">
+            <mat-label>CEP</mat-label>
             <input matInput type="text">
           </mat-form-field>
         </div>
 
         <div>
-          <mat-form-field id="secao" appearance="fill">
-            <mat-label>Seção</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
+          <h2>*Unidade Federativa - ComboBox*</h2>
         </div>
 
         <div>
-          <mat-form-field id="local" appearance="fill">
-            <mat-label>Local</mat-label>
+          <mat-form-field id="endNumeroLeitor" appearance="fill">
+            <mat-label>Número</mat-label>
             <input matInput type="text">
           </mat-form-field>
         </div>

@@ -17,6 +17,11 @@ import { AppBotaoSalvarExcluirComponent } from './botao-salvar-excluir/botao-sal
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
+import {MatDividerModule} from '@angular/material/divider';
+
 
 
 
@@ -30,7 +35,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     AppCadastroItemAcervoComponent,
     AppCadastroSecaoComponent,
     AppCadastroEditoraComponent,
-    AppBotaoSalvarExcluirComponent
+    AppBotaoSalvarExcluirComponent,
+    AppConsultaReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatButtonModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
