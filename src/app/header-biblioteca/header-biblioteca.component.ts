@@ -5,4 +5,9 @@ import { Component } from "@angular/core";
   templateUrl:'./header-biblioteca.component.html',
   styleUrls:['./header-biblioteca.component.scss']
 })
-export class HeaderBibliotecaComponent{ }
+export class HeaderBibliotecaComponent{
+  isMenuOpened: boolean = false;
+  ConsultaseReservas(): void {
+    this.isMenuOpened =  !this.isMenuOpened;
+  }
+}

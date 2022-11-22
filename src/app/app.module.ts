@@ -21,6 +21,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -50,7 +51,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatDatepickerModule,
     MatRadioModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

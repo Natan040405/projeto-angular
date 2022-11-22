@@ -1,21 +1,33 @@
 <section class="menu-h">
   <form class="frmMenu">
     <ul class="menu">
-      <a href="/#">
-        <div class="body">
-          <div class="card-body">
-            <img class="img-logo" src="assets/img/logo.png">
+        <a href="/#">
+          <div class="body">
+            <div class="card-body">
+              <img class="img-logo" src="assets/img/logo.png">
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
       <li><a href="/app-cadastro-autor">Cadastro Autor</a></li>
       <li><a href="/app-cadastro-editora">Cadastro Editora</a></li>
       <li><a href="/app-cadastro-local">Cadastro Local</a></li>
       <li><a href="/app-cadastro-secao">Cadastro Seção</a></li>
       <li><a href="/app-cadastro-item-acervo">Cadastro Item Acervo</a></li>
       <li><a href="/app-cadastro-leitor">Cadastro Leitor</a></li>
-      <li><a href="/app-consulta-reserva">Consultas e Reservas</a></li>
+        <div class="menu-container">
+          <div class="open" (click)="ConsultaseReservas()">Consultas e Reservas</div>
+          <div class="menu-submenu" *ngIf="isMenuOpened">
+            <div class="menu-submenu-item"><a href="#">Reservar</a></div>
+            <div class="menu-submenu-item"><a href="#">Consultar Reserva</a></div>
+            <div class="menu-submenu-item"><a href="#">Consultar Item</a></div>
+          </div>
+        </div>
     </ul>
+
   </form>
   </section>
+
+
+
+
 <router-outlet></router-outlet>

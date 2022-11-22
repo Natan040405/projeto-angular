@@ -3,7 +3,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 .menu-h{
-  width: 99%;
+  width: 98%;
   padding: 0.7%;
   margin: 0 auto;
 }
@@ -15,38 +15,85 @@
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 }
-.menu{
+.menu {
   list-style: none;
   background-color: rgb(255, 255, 255);
   padding: 0;
-  div{
+
+  .body{
     float: left;
     margin-top: 0.4%;
     margin-left: 1.5%;
     margin-right: 2%;
     display: inline;
+    img{
+      width: 50px;
+    }
   }
+
   li{
     display: inline;
   }
-  .img-logo
-  {
-    width: 60px;
-  }
-  li a {
-    color: rgb(0, 0, 0);
-    padding-top: 1.6%;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 1.6%;
+  li a{
+    color: black;
+    padding: 20px;
     display: inline-block;
     text-decoration: none;
+
   }
   li a:hover{
-    background-color: rgb(153, 177, 223);
-    transition: all .4s;
+    background-color: rgb(105, 135, 163);
   }
-
 }
+.frmdropdow{
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.menu-container{
+  display: inline-block;
+}
+.open{
+  color: black;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+.open:hover{
+  background-color: rgb(105, 135, 163);
+  cursor: pointer;
+}
+
+.menu-submenu{
+margin-bottom: 3.7rem;
+margin-left: 0.35rem;
+background-color: rgb(105, 135, 163);
+border-radius: 4px;
+position: absolute;
+padding: 10px;
+transform-origin: left center;
+border: rem(8) solid transparent;
+border-right-color: rgb(105, 135, 163);
+content: "";
+bottom: 70%;
+}
+.menu-submenu-item{
+  cursor: pointer;
+  padding: 10px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: -5px;
+  a{
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.menu-submenu-item:hover{
+  text-decoration: underline;
+}
+
+
+
+
 
 
