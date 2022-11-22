@@ -1,0 +1,111 @@
+
+<section class="bibReserva">
+  <form class="frmReserva">
+    <div>
+       <h1 class="titReresva">Reserva</h1>
+    </div>
+
+    <div class="linha">
+
+      <div class="coluna01">
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label> Tipo da Movimentação</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let mov of movs" [value]="mov.value">
+                  {{mov.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="codItem" appearance="fill">
+            <mat-label>Código do Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeItem" appearance="fill">
+            <mat-label>Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="numExemplar" appearance="fill">
+            <mat-label>Número do Exemplar</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="tipoItem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <!-- fim da coluna01 -->
+
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="localizacao" appearance="fill">
+            <mat-label>Localização</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="codLeitor" appearance="fill">
+            <mat-label>Código do Leitor</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeLeitor" appearance="fill">
+            <mat-label>Leitor</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="situacao" appearance="fill">
+            <mat-label>Situação</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="date">
+          <div class="date-reserva">
+            <mat-form-field class="dataReserva" appearance="fill">
+              <mat-label>Data da Reserva</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker #picker></mat-datepicker>
+              <button mat-icon-button (click)="picker.open()"><mat-icon>calendar_month</mat-icon></button>
+            </mat-form-field>
+          </div>
+          <div class="date-reserva">
+            <mat-form-field class="dataDevolucao" appearance="fill">
+              <mat-label>Data da Devolução</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker #picker></mat-datepicker>
+              <button mat-icon-button (click)="picker.open()"><mat-icon>calendar_month</mat-icon></button>
+            </mat-form-field>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+  </form>
+</section>
+
+

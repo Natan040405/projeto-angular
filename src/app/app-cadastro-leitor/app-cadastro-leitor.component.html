@@ -1,7 +1,8 @@
+
 <section class="cadLeitor">
   <form class="frmLeitor">
     <div>
-       <h1 class="titLeitor">Cadastro Item Acervo</h1>
+       <h1 class="titLeitor">Cadastro Leitor</h1>
     </div>
 
     <div class="linha">
@@ -29,17 +30,23 @@
         </div>
 
         <div>
+          <mat-form-field class="dataNascimento" appearance="fill">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div>
           <mat-form-field id="cpfLeitor" appearance="fill">
             <mat-label>CPF</mat-label>
             <input matInput>
           </mat-form-field>
         </div>
 
-        <div>
-          <div>
-            <h2>*Data de Nascimento - DatePicker*</h2>
-          </div>
-        </div>
+
 
       </div>
 <!-- fim Coluna01 -->
@@ -107,7 +114,14 @@
         </div>
 
         <div>
-          <h2>*Unidade Federativa - ComboBox*</h2>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>UF</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Uf of Ufs" [value]="Uf.value">
+                  {{Uf.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
 
         <div>

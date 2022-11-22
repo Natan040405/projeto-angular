@@ -1,0 +1,42 @@
+
+
+.bibReserva{
+  width: 98%;
+  padding: 1.7%;
+  margin: 0 auto;
+}
+.frmReserva{
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
+.coluna01 {
+  width: 48%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 48%;
+  right: 20%;
+  position: relative;
+}
+#nomeItem{
+  width: 55%;
+}
+#nomeLeitor{
+  width: 55%;
+}
+.titAutor{
+  font-family: 'Calibri', sans-serif ;
+  font-size: 2rem;
+}
+.date-reserva{
+  display: inline-block;
+  padding-right: 3%;
+}
+

@@ -64,24 +64,19 @@
 }
 
 .menu-submenu{
-margin-bottom: 3.7rem;
-margin-left: 0.35rem;
-background-color: rgb(105, 135, 163);
-border-radius: 4px;
-position: absolute;
-padding: 10px;
-transform-origin: left center;
-border: rem(8) solid transparent;
-border-right-color: rgb(105, 135, 163);
-content: "";
-bottom: 70%;
+  margin-left: 0.3rem;
+  background-color: rgb(105, 135, 163);
+  border-radius: 4px;
+  position: absolute;
+  padding: 10px;
+  transform-origin: left center;
 }
 .menu-submenu-item{
   cursor: pointer;
-  padding: 10px 0;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: -5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-left: -20px;
   a{
     color: black;
     text-decoration: none;

@@ -1,3 +1,4 @@
+
 <section class="menu-h">
   <form class="frmMenu">
     <ul class="menu">
@@ -17,17 +18,14 @@
         <div class="menu-container">
           <div class="open" (click)="ConsultaseReservas()">Consultas e Reservas</div>
           <div class="menu-submenu" *ngIf="isMenuOpened">
-            <div class="menu-submenu-item"><a href="#">Reservar</a></div>
+            <div class="menu-submenu-item"><a href="/app-reserva">Reservar</a></div>
             <div class="menu-submenu-item"><a href="#">Consultar Reserva</a></div>
             <div class="menu-submenu-item"><a href="#">Consultar Item</a></div>
           </div>
         </div>
     </ul>
-
   </form>
   </section>
+  <router-outlet></router-outlet>
 
 
-
-
-<router-outlet></router-outlet>

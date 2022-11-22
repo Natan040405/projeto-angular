@@ -19,10 +19,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
-import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
+import { AppReservaComponent } from './app-reserva/app-reserva.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatIconModule} from '@angular/material/icon';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -37,7 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppCadastroSecaoComponent,
     AppCadastroEditoraComponent,
     AppBotaoSalvarExcluirComponent,
-    AppConsultaReservaComponent
+    AppReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatRadioModule,
     MatMenuModule,
     MatDividerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

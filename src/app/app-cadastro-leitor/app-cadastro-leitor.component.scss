@@ -48,16 +48,23 @@
 }
 
 .feminino{
-  padding-bottom: 9%;
-  padding-top: 4%;
+  padding-bottom: 10%;
+  padding-top: 1%;
   left: 8%;
 
   position: relative;
 }
 .masculino{
   padding-bottom: 9%;
-  padding-top: 4%;
+  padding-top: 1%;
   left: 4%;
 
   position: relative;
+}
+.dataNascimento{
+  bottom: 2rem;
+  position: relative;
+}
+#cpfLeitor{
+  bottom: 2rem;
 }

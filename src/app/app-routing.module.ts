@@ -6,7 +6,7 @@ import { AppCadastroLeitorComponent } from './app-cadastro-leitor/app-cadastro-l
 import { AppCadastroItemAcervoComponent } from './app-cadastro-item-acervo/app-cadastro-item-acervo.component';
 import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro-editora.component';
 import { AppCadastroSecaoComponent } from './app-cadastro-secao/app-cadastro-secao.component';
-import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
+import { AppReservaComponent } from './app-reserva/app-reserva.component';
 
 const routes: Routes = [
   { path: 'app-cadastro-autor', component: AppCadastroAutorComponent},
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'app-cadastro-item-acervo', component: AppCadastroItemAcervoComponent},
   { path: 'app-cadastro-editora', component: AppCadastroEditoraComponent},
   { path: 'app-cadastro-secao', component: AppCadastroSecaoComponent},
-  { path: 'app-consulta-reserva', component: AppConsultaReservaComponent}
+  { path: 'app-reserva', component: AppReservaComponent}
 ];
 
 @NgModule({
