@@ -27,45 +27,45 @@ import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ModalF3LeitorModule } from './modal-f3-leitor/modal-f3-leitor.module';
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderBibliotecaComponent,
-    AppCadastroAutorComponent,
-    AppCadastroLeitorComponent,
-    AppCadastroLocalComponent,
-    AppCadastroItemAcervoComponent,
-    AppCadastroSecaoComponent,
-    AppCadastroEditoraComponent,
-    AppBotaoSalvarExcluirComponent,
-    AppReservaComponent,
-    AppConsultaItemComponent,
-    AppConsultaReservaComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatCheckboxModule,
-    MatDatepickerModule,
-    MatRadioModule,
-    MatMenuModule,
-    MatDividerModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatNativeDateModule,
-    ModalF3ItemModule,
-    ModalF3ItemModule
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderBibliotecaComponent,
+        AppCadastroAutorComponent,
+        AppCadastroLeitorComponent,
+        AppCadastroLocalComponent,
+        AppCadastroItemAcervoComponent,
+        AppCadastroSecaoComponent,
+        AppCadastroEditoraComponent,
+        AppBotaoSalvarExcluirComponent,
+        AppReservaComponent,
+        AppConsultaItemComponent,
+        AppConsultaReservaComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatCardModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatCheckboxModule,
+        MatDatepickerModule,
+        MatRadioModule,
+        MatMenuModule,
+        MatDividerModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatNativeDateModule,
+        ModalF3ItemModule,
+        ModalF3LeitorModule
+    ]
 })
 export class AppModule { }

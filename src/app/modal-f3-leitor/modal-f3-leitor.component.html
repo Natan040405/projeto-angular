@@ -1,4 +1,4 @@
-<ng-container *ngIf="mostrarLeitor">
+<ng-container *ngIf="mostrarleitor">
   <div class="modal-f3-leitor">
     <div>
       <mat-form-field id="pesquisa" appearance="fill">
@@ -6,10 +6,10 @@
         <input matInput>
       </mat-form-field>
     </div>
-    <button class="botao" mat-raised-button (click)="toggleLeitor()">OK</button>
+    <button class="botao" mat-raised-button (click)="toggleleitor()">OK</button>
     <ng-content></ng-content>
 
   </div>
-  <div (click)="toggleLeitor()"
+  <div (click)="toggleleitor()"
        class="overlay"></div>
 </ng-container>

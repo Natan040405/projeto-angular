@@ -79,14 +79,13 @@
               <input matInput>
             </mat-form-field>
           </div>
-          <div class="f3-leitor" (click)="modal.toggleLeitor()">
+          <div class="f3-item" (click)="modales.toggleleitor()">
             <mat-icon>search</mat-icon>
           </div>
-          <app-modal-f3-leitor #modal></app-modal-f3-leitor>
-          <div class="modal-leitor" *ngIf="isModalItemOpened">
-            <app-modal-f3-item></app-modal-f3-item>
+          <app-modal-f3-leitor #modales ></app-modal-f3-leitor>
+          <div class="modal-leitor" *ngIf="isModalLeitorOpened">
+            <app-modal-f3-leitor></app-modal-f3-leitor>
           </div>
-
         </div>
 
         <div>
@@ -120,6 +119,8 @@
     </div>
 
     <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+
+
   </form>
 </section>
 
