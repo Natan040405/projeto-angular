@@ -15,4 +15,14 @@ export class AppReservaComponent{
     {value: 'Reservar', viewValue: 'Reservar'},
     {value: 'Devolver', viewValue: 'Devolver'},
   ]
+
+  isModalLeitorOpened: boolean = false;
+  modalF3Leitor(): void{
+    this.isModalLeitorOpened =  !this.isModalLeitorOpened;
+  }
+
+  isModalItemOpened: boolean = false;
+  modalF3Item(): void{
+    this.isModalItemOpened =  !this.isModalItemOpened;
+  }
 }

@@ -1,0 +1,15 @@
+<ng-container *ngIf="mostrarLeitor">
+  <div class="modal-f3-leitor">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome do Leitor</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <button class="botao" mat-raised-button (click)="toggleLeitor()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleLeitor()"
+       class="overlay"></div>
+</ng-container>

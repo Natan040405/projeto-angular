@@ -2,7 +2,7 @@
 <section class="bibReserva">
   <form class="frmReserva">
     <div>
-       <h1 class="titReresva">Reserva</h1>
+       <h1 class="titReserva">Reserva</h1>
     </div>
 
     <div class="linha">
@@ -20,11 +20,22 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field id="codItem" appearance="fill">
-            <mat-label>Código do Item</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <div class="f3Item">
+
+          <div>
+            <mat-form-field id="codItem" appearance="fill">
+              <mat-label>Código do Item</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="f3-item" (click)="modal.toggleItem()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-item #modal></app-modal-f3-item>
+          <div class="modal-item" *ngIf="isModalItemOpened">
+            <app-modal-f3-item></app-modal-f3-item>
+          </div>
+
         </div>
 
         <div>
@@ -60,11 +71,22 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field id="codLeitor" appearance="fill">
-            <mat-label>Código do Leitor</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <div class="f3Leitor">
+
+          <div>
+            <mat-form-field id="codLeitor" appearance="fill">
+              <mat-label>Código do Leitor</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="f3-leitor" (click)="modal.toggleLeitor()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-leitor #modal></app-modal-f3-leitor>
+          <div class="modal-leitor" *ngIf="isModalItemOpened">
+            <app-modal-f3-item></app-modal-f3-item>
+          </div>
+
         </div>
 
         <div>

@@ -1,0 +1,107 @@
+<section class="consultaReserva">
+  <form class="frmConsultaReserva">
+    <div>
+       <h1 class="titConsultaReserva">Consultar Reserva</h1>
+    </div>
+
+    <div class="linha">
+
+      <div class="coluna01">
+
+        <div class="itemConsulta">
+          <div>
+            <mat-form-field id="codItem" appearance="fill">
+              <mat-label>Código do Item</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+              <mat-label>Item</mat-label>
+          </div>
+        </div>
+
+        <div class="leitorConsulta">
+          <div>
+            <mat-form-field id="codLeitor" appearance="fill">
+              <mat-label>Código do Leitor</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+              <mat-label>Leitor</mat-label>
+          </div>
+        </div>
+
+        <div class="autorConsulta">
+          <div>
+            <mat-form-field id="codAutor" appearance="fill">
+              <mat-label>Código do Autor</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-label>Autor</mat-label>
+          </div>
+        </div>
+
+        <div class="secaoConsulta">
+          <div>
+            <mat-form-field id="codSecao" appearance="fill">
+              <mat-label>Código da Seção</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-label>Seção</mat-label>
+          </div>
+        </div>
+
+      </div>
+      <!-- fim da coluna01 -->
+
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="localizacao" appearance="fill">
+            <mat-label>Localização</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                  {{Tipo.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="situacao" appearance="fill">
+            <mat-label>Situação</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="date">
+          <mat-form-field appearance="fill">
+            <mat-label>Data de Reserva e Devolução</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date">
+              <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </div>
+
+    <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+  </form>
+</section>

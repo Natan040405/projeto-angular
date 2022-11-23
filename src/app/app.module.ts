@@ -1,3 +1,6 @@
+import { ModalF3ItemModule } from './modal-f3-item/modal-f3-item.module';
+import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
+import { AppConsultaItemComponent } from './app-consulta-item/app-consulta-item.component';
 import { AppCadastroLocalComponent } from './app-cadastro-local/app-cadastro-local.component';
 import { AppCadastroLeitorComponent } from './app-cadastro-leitor/app-cadastro-leitor.component';
 import { NgModule } from '@angular/core';
@@ -9,20 +12,20 @@ import { HeaderBibliotecaComponent } from './header-biblioteca/header-biblioteca
 import { AppCadastroItemAcervoComponent } from './app-cadastro-item-acervo/app-cadastro-item-acervo.component';
 import { AppCadastroSecaoComponent } from './app-cadastro-secao/app-cadastro-secao.component';
 import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro-editora.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { AppBotaoSalvarExcluirComponent } from './botao-salvar-excluir/botao-salvar-excluir.component';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatMenuModule } from '@angular/material/menu';
 import { AppReservaComponent } from './app-reserva/app-reserva.component';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 
 
@@ -38,7 +41,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     AppCadastroSecaoComponent,
     AppCadastroEditoraComponent,
     AppBotaoSalvarExcluirComponent,
-    AppReservaComponent
+    AppReservaComponent,
+    AppConsultaItemComponent,
+    AppConsultaReservaComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,10 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatDividerModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ModalF3ItemModule,
+    ModalF3ItemModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

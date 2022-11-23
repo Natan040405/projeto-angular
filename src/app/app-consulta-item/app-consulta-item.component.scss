@@ -1,0 +1,53 @@
+.consultaItem{
+  width: 98%;
+  padding: 1.7%;
+  margin: 0 auto;
+}
+.frmConsultaItem{
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
+.coluna01 {
+  width: 48%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 48%;
+  right: 12%;
+  position: relative;
+}
+.titConsultaItem{
+  font-family: 'Calibri', sans-serif ;
+  font-size: 2rem;
+}
+#nomeItem{
+  width: 22rem;
+}
+.autorConsultaItem{
+  div{
+    display: inline-block;
+    position: relative;
+    padding-right: 0.5rem;
+  }
+}
+.localConsultaItem{
+  div{
+    display: inline-block;
+    position: relative;
+    padding-right: 0.5rem;
+  }
+}
+.secaoConsultaItem{
+  div{
+    display: inline-block;
+    position: relative;
+    padding-right: 0.5rem;
+  }
+}

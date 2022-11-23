@@ -1,0 +1,107 @@
+<section class="consultaItem">
+  <form class="frmConsultaItem">
+    <div>
+       <h1 class="titConsultaItem">Consultar Item</h1>
+    </div>
+
+    <div class="linha">
+
+      <div class="coluna01">
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                  {{Tipo.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="codItem" appearance="fill">
+            <mat-label>Código do Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeItem" appearance="fill">
+            <mat-label>Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="autorConsultaItem">
+
+          <div>
+            <mat-form-field id="Autor" appearance="fill">
+              <mat-label>Código do Autor</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-label>Autor</mat-label>
+          </div>
+
+        </div>
+
+      </div>
+      <!-- fim da coluna01 -->
+
+      <div class="coluna02">
+
+        <div class="localConsultaItem">
+
+          <div>
+            <mat-form-field id="local" appearance="fill">
+              <mat-label>Código do Local</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-label>Local</mat-label>
+          </div>
+
+        </div>
+
+        <div class="secaoConsultaItem">
+
+          <div>
+            <mat-form-field id="secao" appearance="fill">
+              <mat-label>Código da Seção</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-label>Seção</mat-label>
+          </div>
+
+        </div>
+
+        <div>
+          <mat-form-field id="coleção" appearance="fill">
+            <mat-label>Coleção</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="CbStatusItem" appearance="fill">
+            <mat-label>Situação do Item</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let status of Status" [value]="status.value">
+                  {{status.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </div>
+
+    <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+  </form>
+</section>

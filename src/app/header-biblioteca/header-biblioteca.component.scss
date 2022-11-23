@@ -73,9 +73,10 @@
 }
 .menu-submenu-item{
   cursor: pointer;
-  padding: 10px;
+  // padding: 10px;
   padding-left: 25px;
   padding-right: 25px;
+  padding-bottom: 10px;
   margin-left: -20px;
   a{
     color: black;
@@ -86,6 +87,7 @@
 .menu-submenu-item:hover{
   text-decoration: underline;
 }
+
 
 
 

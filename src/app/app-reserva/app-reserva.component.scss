@@ -31,12 +31,30 @@
 #nomeLeitor{
   width: 55%;
 }
-.titAutor{
+.titReserva{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
 }
 .date-reserva{
   display: inline-block;
   padding-right: 3%;
+}
+.f3Item{
+  div{
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+}
+.f3Leitor{
+  div{
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+}
+.f3-leitor{
+  cursor: pointer;
+}
+.f3-item{
+  cursor: pointer;
 }
 

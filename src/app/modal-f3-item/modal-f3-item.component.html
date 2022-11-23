@@ -1,0 +1,15 @@
+<ng-container *ngIf="mostrarItem">
+  <div class="modal-f3-item">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome do Item</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <button class="botao" mat-raised-button (click)="toggleItem()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleItem()"
+       class="overlay"></div>
+</ng-container>

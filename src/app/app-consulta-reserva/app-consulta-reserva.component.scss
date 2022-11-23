@@ -1,0 +1,59 @@
+
+
+.consultaReserva{
+  width: 98%;
+  padding: 1.7%;
+  margin: 0 auto;
+}
+.frmConsultaReserva{
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
+.coluna01 {
+  width: 48%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 48%;
+  right: 8%;
+  position: relative;
+}
+.titConsultaReserva{
+  font-family: 'Calibri', sans-serif ;
+  font-size: 2rem;
+}
+.autorConsulta{
+  div{
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+  }
+}
+.itemConsulta{
+  div{
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+  }
+}
+.leitorConsulta{
+  div{
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+  }
+}
+.secaoConsulta{
+  div{
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+  }
+}
