@@ -1,0 +1,33 @@
+<ng-container *ngIf="mostrarAutor">
+  <div class="modal-f3-autor">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome do Autor</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+
+    <div class="tabela">
+      <table mat-table [dataSource]="dataSource" class="tabelaAutor">
+        <ng-container matColumnDef="codAutor">
+          <th mat-header-cell *matHeaderCellDef> Código </th>
+          <td mat-cell *matCellDef="let element"> {{element.codAutor}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="nomeAutor">
+          <th mat-header-cell *matHeaderCellDef> Nome </th>
+          <td mat-cell *matCellDef="let element"> {{element.nomeAutor}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <button class="botao" mat-raised-button (click)="toggleAutor()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleAutor()"
+       class="overlay"></div>
+</ng-container>

@@ -1,0 +1,15 @@
+<ng-container *ngIf="mostrarLocal">
+  <div class="modal-f3-local">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome do Local</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <button class="botao" mat-raised-button (click)="toggleLocal()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleLocal()"
+       class="overlay"></div>
+</ng-container>

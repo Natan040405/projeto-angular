@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 export interface PeriodicElement {
   nomeAutor: string;
@@ -19,11 +19,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 @Component({
-  selector: 'app-cadastro-autor',
-  templateUrl: './app-cadastro-autor.component.html',
-  styleUrls: ['./app-cadastro-autor.component.scss']
+  selector: 'app-modal-f3-autor',
+  templateUrl:'./modal-f3-autor.component.html',
+  styleUrls:['./modal-f3-autor.component.scss']
 })
-export class AppCadastroAutorComponent {
+export class ModalF3AutorComponent {
   displayedColumns: string[] = ['codAutor', 'nomeAutor'];
   dataSource = ELEMENT_DATA;
+
+  mostrarAutor: boolean = false;
+
+  toggleAutor () {
+    this.mostrarAutor = !this.mostrarAutor;
+  }
+
+
 }

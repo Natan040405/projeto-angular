@@ -3,25 +3,25 @@ import { NgModule } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { ModalF3ItemComponent } from "./modal-f3-item.component";
+import { ModalF3AutorComponent } from "./modal-f3-autor.component";
 import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
-    ModalF3ItemComponent
+    ModalF3AutorComponent
   ],
   imports: [
     CommonModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
   ],
   exports: [
-    ModalF3ItemComponent,
+    ModalF3AutorComponent,
   ]
 })
-export class ModalF3ItemModule {
+export class ModalF3AutorModule {
 
 }

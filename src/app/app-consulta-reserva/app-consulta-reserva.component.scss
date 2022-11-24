@@ -29,31 +29,49 @@
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
 }
-.autorConsulta{
+.f3Item{
   div{
     display: inline-block;
     position: relative;
     margin-right: 0.5rem;
   }
 }
-.itemConsulta{
+.f3Leitor{
   div{
     display: inline-block;
     position: relative;
     margin-right: 0.5rem;
   }
 }
-.leitorConsulta{
+.f3Autor{
   div{
     display: inline-block;
     position: relative;
     margin-right: 0.5rem;
   }
 }
-.secaoConsulta{
+.f3Secao{
   div{
     display: inline-block;
     position: relative;
     margin-right: 0.5rem;
   }
+}
+
+
+.f3-item{
+  cursor: pointer;
+  border-radius:100%;
+}
+.f3-leitor{
+  cursor: pointer;
+  border-radius: 100%;
+}
+.f3-autor{
+  cursor: pointer;
+  border-radius:100%;
+}
+.f3-secao{
+  cursor: pointer;
+  border-radius:100%;
 }

@@ -1,0 +1,15 @@
+<ng-container *ngIf="mostrarEditora">
+  <div class="modal-f3-editora">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome da Editora</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <button class="botao" mat-raised-button (click)="toggleEditora()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleEditora()"
+       class="overlay"></div>
+</ng-container>

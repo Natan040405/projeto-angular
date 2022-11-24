@@ -1,3 +1,4 @@
+import { ModalF3EditoraModule } from './modal-f3-editora/modal-f3-editora.module';
 import { ModalF3ItemModule } from './modal-f3-item/modal-f3-item.module';
 import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
 import { AppConsultaItemComponent } from './app-consulta-item/app-consulta-item.component';
@@ -28,6 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ModalF3LeitorModule } from './modal-f3-leitor/modal-f3-leitor.module';
+import { ModalF3AutorModule } from './modal-f3-autor/modal-f3-autor.module';
+import { ModalF3SecaoModule } from './modal-f3-secao/modal-f3-secao.module';
+import { ModalF3LocalModule } from './modal-f3-local/modal-f3-local.module';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 
@@ -65,7 +71,12 @@ import { ModalF3LeitorModule } from './modal-f3-leitor/modal-f3-leitor.module';
         MatIconModule,
         MatNativeDateModule,
         ModalF3ItemModule,
-        ModalF3LeitorModule
+        ModalF3LeitorModule,
+        ModalF3LocalModule,
+        ModalF3AutorModule,
+        ModalF3SecaoModule,
+        ModalF3EditoraModule,
+        MatTableModule
     ]
 })
 export class AppModule { }

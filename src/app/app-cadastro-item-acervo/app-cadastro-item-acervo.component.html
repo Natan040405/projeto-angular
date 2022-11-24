@@ -21,11 +21,17 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field id='codLocal' appearance="fill">
-            <mat-label>Código Local</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <div class="f3Local">
+          <div>
+            <mat-form-field id='codLocal' appearance="fill">
+              <mat-label>Código Local</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="f3-local" (click)="modalLocal.toggleLocal()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-local #modalLocal></app-modal-f3-local>
         </div>
 
         <div>
@@ -35,29 +41,41 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field id="codAutor" appearance="fill">
-            <mat-label>Código Autor</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <div class="f3Autor">
+
+          <div>
+            <mat-form-field id="codAutor" appearance="fill">
+              <mat-label>Código Autor</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="f3-autor" (click)="modalAutor.toggleAutor()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-autor #modalAutor></app-modal-f3-autor>
+          <div>
+            <mat-label></mat-label>
+          </div>
         </div>
 
       </div>
 <!-- fim Coluna01 -->
       <div class="coluna02">
 
-        <div>
-          <mat-form-field id="codEditora" appearance="fill">
-            <mat-label>Código Editora</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
-        </div>
-
-        <div>
-          <mat-form-field id="codColeção" appearance="fill">
-            <mat-label>Código Coleção</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
+        <div class="f3Editora">
+          <div>
+            <mat-form-field id="codEditora" appearance="fill">
+              <mat-label>Código Editora</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+          </div>
+          <div class="f3-editora" (click)="modalEditora.toggleEditora()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-editora #modalEditora></app-modal-f3-editora>
+          <div>
+            <mat-label></mat-label>
+          </div>
         </div>
 
         <div>
@@ -97,11 +115,20 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field id="secao" appearance="fill">
-            <mat-label>Seção</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
+        <div class="f3Secao">
+          <div>
+            <mat-form-field id="secao" appearance="fill">
+              <mat-label>Seção</mat-label>
+              <input matInput type="text">
+            </mat-form-field>
+          </div>
+          <div class="f3-secao" (click)="modalSecao.toggleSecao()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-secao #modalSecao></app-modal-f3-secao>
+          <div>
+            <mat-label></mat-label>
+          </div>
         </div>
 
         <div>

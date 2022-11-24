@@ -1,0 +1,15 @@
+<ng-container *ngIf="mostrarSecao">
+  <div class="modal-f3-secao">
+    <div>
+      <mat-form-field id="pesquisa" appearance="fill">
+        <mat-label>Nome da Secao</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <button class="botao" mat-raised-button (click)="toggleSecao()">OK</button>
+    <ng-content></ng-content>
+
+  </div>
+  <div (click)="toggleSecao()"
+       class="overlay"></div>
+</ng-container>

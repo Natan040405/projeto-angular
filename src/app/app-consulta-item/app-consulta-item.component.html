@@ -41,8 +41,12 @@
               <input matInput>
             </mat-form-field>
           </div>
+          <div class="f3-autor" (click)="modalAutor.toggleAutor()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-autor #modalAutor></app-modal-f3-autor>
           <div>
-            <mat-label>Autor</mat-label>
+            <mat-label></mat-label>
           </div>
 
         </div>
@@ -60,8 +64,12 @@
               <input matInput>
             </mat-form-field>
           </div>
+          <div class="f3-local" (click)="modalLocal.toggleLocal()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-local #modalLocal></app-modal-f3-local>
           <div>
-            <mat-label>Local</mat-label>
+            <mat-label></mat-label>
           </div>
 
         </div>
@@ -74,8 +82,12 @@
               <input matInput>
             </mat-form-field>
           </div>
+          <div class="f3-secao" (click)="modalSecao.toggleSecao()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-secao #modalSecao></app-modal-f3-secao>
           <div>
-            <mat-label>Seção</mat-label>
+            <mat-label></mat-label>
           </div>
 
         </div>
