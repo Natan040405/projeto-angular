@@ -15,7 +15,6 @@ import { AppCadastroSecaoComponent } from './app-cadastro-secao/app-cadastro-sec
 import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro-editora.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { AppBotaoSalvarExcluirComponent } from './botao-salvar-excluir/botao-salvar-excluir.component';
 import { MatSelectModule } from '@angular/material/select';
@@ -32,9 +31,12 @@ import { ModalF3LeitorModule } from './modal-f3-leitor/modal-f3-leitor.module';
 import { ModalF3AutorModule } from './modal-f3-autor/modal-f3-autor.module';
 import { ModalF3SecaoModule } from './modal-f3-secao/modal-f3-secao.module';
 import { ModalF3LocalModule } from './modal-f3-local/modal-f3-local.module';
-import {MatTableModule} from '@angular/material/table';
-
-
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { AutorDialogComponent } from './autor-dialog/autor-dialog.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import {MatTableModule} from '@angular/material/table';
         AppBotaoSalvarExcluirComponent,
         AppReservaComponent,
         AppConsultaItemComponent,
-        AppConsultaReservaComponent
+        AppConsultaReservaComponent,
+        AutorDialogComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -59,7 +62,6 @@ import {MatTableModule} from '@angular/material/table';
         AppRoutingModule,
         MatFormFieldModule,
         MatInputModule,
-        MatCardModule,
         MatButtonModule,
         MatSelectModule,
         MatCheckboxModule,
@@ -76,7 +78,11 @@ import {MatTableModule} from '@angular/material/table';
         ModalF3AutorModule,
         ModalF3SecaoModule,
         ModalF3EditoraModule,
-        MatTableModule
+        MatTableModule,
+        HttpClientModule,
+        MatDialogModule,
+        MatTooltipModule,
+        FormsModule,
     ]
 })
 export class AppModule { }

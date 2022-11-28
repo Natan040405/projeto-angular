@@ -1,26 +1,33 @@
 
 .cadAutor{
-  width: 98%;
-  padding: 1.7%;
-  margin: 0 auto;
-}
-.frmAutor{
-  background-color: white;
-  padding: 16px;
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 95%;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-}
-.row div{
-  display: inline-flex;
-}
-#nomeAutor{
-  width: 30%;
-}
-#descAutor{
-  width: 30%;
 }
 .titAutor{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
+}
+.tabela{
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.3);
+}
+
+  h1{
+    margin: 0;
+  }
+.header{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table{
+  width: 100%;
 }
 

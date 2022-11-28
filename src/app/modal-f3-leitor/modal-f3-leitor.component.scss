@@ -2,7 +2,7 @@
   background-color: #fff;
   width: 50rem;
   border-radius: 4px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   position: fixed;
   left: 50%;
   padding: 1.2rem;
@@ -11,7 +11,7 @@
   z-index: 11;
 }
 .overlay{
-  background-color: rgb(148, 148, 148);
+  background-color: rgb(121, 120, 120);
   height: 100vh;
   left: 0;
   opacity: 0.5;

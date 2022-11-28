@@ -1,5 +1,51 @@
 
+
 <section class="cadAutor">
+  <div class="header">
+    <h1 class="titAutor">Cadastro Autor</h1>
+    <button mat-fab color="primary" matTooltip="Cadastrar Autor" (click)="openDialog(null)" >
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaAutor [dataSource]="autor" class="tabelaAutor">
+      <ng-container matColumnDef="codAutor">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let autor"> {{autor.codAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeAutor">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let autor"> {{autor.nomeAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="descAutor">
+        <th mat-header-cell *matHeaderCellDef> Descrição </th>
+        <td mat-cell *matCellDef="let autor"> {{autor.descAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let autor">
+          <button mat-icon-button (click)="updateAutor(autor)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteAutor(autor.codAutor)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- <section class="cadAutor">
   <form class="frmAutor">
     <div>
        <h1 class="titAutor">Cadastro Autor</h1>
@@ -25,9 +71,13 @@
       </mat-form-field>
     </div>
 
+
     <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
 
+
+
+
   </form>
-</section>
+</section> -->
 
 
