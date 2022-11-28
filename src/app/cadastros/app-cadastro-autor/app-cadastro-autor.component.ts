@@ -1,11 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTable } from '@angular/material/table';
-import { AutorDialogComponent } from '../autor-dialog/autor-dialog.component';
-import {AbstractControl, FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
-import Autor from '../models/autor';
-import { AutorService } from '../services/autor.service';
+import { AutorService } from 'src/app/services/autor.service';
+import { AutorDialogComponent } from 'src/app/dialogs/autor-dialog/autor-dialog.component';
+import Autor from 'src/app/models/autor';
+
 
 
 @Component({
@@ -27,10 +26,6 @@ export class AppCadastroAutorComponent implements OnInit {
     })
 
     }
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  }
 
   ngOnInit(): void {
   }
@@ -65,6 +60,7 @@ export class AppCadastroAutorComponent implements OnInit {
         } else{
           this.autorService.createAutor(result)
           .subscribe(data => {
+            console.log(result)
             this.autor.push(data)
             this.tabelaAutor.renderRows();
             window.location.reload();

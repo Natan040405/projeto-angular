@@ -1,10 +1,7 @@
 
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import Autor from '../models/autor';
-import { FormControl } from '@angular/forms';
+import Autor from '../../models/autor';
 
 @Component ({
   selector: 'app-autor-dialog',

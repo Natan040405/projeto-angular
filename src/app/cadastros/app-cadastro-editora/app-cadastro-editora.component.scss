@@ -1,0 +1,32 @@
+.cadEditora{
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 95%;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+.titEditora{
+  font-family: 'Calibri', sans-serif ;
+  font-size: 2rem;
+}
+.tabela{
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.3);
+}
+
+  h1{
+    margin: 0;
+  }
+.header{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+table{
+  width: 100%;
+}
+

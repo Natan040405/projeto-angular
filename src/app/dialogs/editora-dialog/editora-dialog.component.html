@@ -1,0 +1,21 @@
+<div class="cadEditora">
+
+  <!-- <h1 *ngIf="isChange" mat-dialog-title>Atualizar Editora</h1> -->
+  <h1 mat-dialog-title>Cadastrar Editora</h1>
+  <div mat-dialog-content >
+
+    <div id="nomeEditora">
+      <mat-form-field id="nomeEditora" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="data.nomeEditora">
+      </mat-form-field>
+    </div>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <!-- <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button> -->
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+
+<section class="cadEditora">
+  <div class="header">
+    <h1 class="titEditora">Cadastro Editora</h1>
+    <button mat-fab color="primary" matTooltip="Cadastrar Editora" (click)="openDialog(null)" >
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaEditora [dataSource]="editora" class="tabelaEditora">
+      <ng-container matColumnDef="codEditora">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let editora"> {{editora.codEditora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeEditora">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let editora"> {{editora.nomeEditora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let editora">
+          <button mat-icon-button (click)="updateEditora(editora)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteEditora(editora.codEditora)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+<!-- <section class="cadEditora">
+  <form class="frmEditora">
+    <div>
+       <h1 class="titEditora">Cadastro Editora</h1>
+    </div>
+
+    <div>
+      <mat-form-field id='codEditora' appearance="fill">
+        <mat-label>Código</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field id="nomeEditora" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+
+    <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
+  </form>
+</section> -->

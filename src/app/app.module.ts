@@ -1,18 +1,10 @@
-import { ModalF3EditoraModule } from './modal-f3-editora/modal-f3-editora.module';
-import { ModalF3ItemModule } from './modal-f3-item/modal-f3-item.module';
-import { AppConsultaReservaComponent } from './app-consulta-reserva/app-consulta-reserva.component';
-import { AppConsultaItemComponent } from './app-consulta-item/app-consulta-item.component';
-import { AppCadastroLocalComponent } from './app-cadastro-local/app-cadastro-local.component';
-import { AppCadastroLeitorComponent } from './app-cadastro-leitor/app-cadastro-leitor.component';
+import { ModalF3EditoraModule } from './modals-f3/modal-f3-editora/modal-f3-editora.module';
+import { AppConsultaReservaComponent } from './consultas-e-reservas/app-consulta-reserva/app-consulta-reserva.component';
+import { AppConsultaItemComponent } from './consultas-e-reservas/app-consulta-item/app-consulta-item.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppCadastroAutorComponent } from './app-cadastro-autor/app-cadastro-autor.component';
-import { HeaderBibliotecaComponent } from './header-biblioteca/header-biblioteca.component';
-import { AppCadastroItemAcervoComponent } from './app-cadastro-item-acervo/app-cadastro-item-acervo.component';
-import { AppCadastroSecaoComponent } from './app-cadastro-secao/app-cadastro-secao.component';
-import { AppCadastroEditoraComponent } from './app-cadastro-editora/app-cadastro-editora.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,21 +14,30 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
-import { AppReservaComponent } from './app-reserva/app-reserva.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatNativeDateModule } from '@angular/material/core';
-import { ModalF3LeitorModule } from './modal-f3-leitor/modal-f3-leitor.module';
-import { ModalF3AutorModule } from './modal-f3-autor/modal-f3-autor.module';
-import { ModalF3SecaoModule } from './modal-f3-secao/modal-f3-secao.module';
-import { ModalF3LocalModule } from './modal-f3-local/modal-f3-local.module';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { AutorDialogComponent } from './autor-dialog/autor-dialog.component';
+import { AutorDialogComponent } from './dialogs/autor-dialog/autor-dialog.component';
 import { FormsModule } from '@angular/forms';
+import { HeaderBibliotecaComponent } from './header-biblioteca/header-biblioteca.component';
+import { AppCadastroAutorComponent } from './cadastros/app-cadastro-autor/app-cadastro-autor.component';
+import { AppCadastroLeitorComponent } from './cadastros/app-cadastro-leitor/app-cadastro-leitor.component';
+import { AppCadastroLocalComponent } from './cadastros/app-cadastro-local/app-cadastro-local.component';
+import { AppCadastroItemAcervoComponent } from './cadastros/app-cadastro-item-acervo/app-cadastro-item-acervo.component';
+import { AppCadastroSecaoComponent } from './cadastros/app-cadastro-secao/app-cadastro-secao.component';
+import { AppCadastroEditoraComponent } from './cadastros/app-cadastro-editora/app-cadastro-editora.component';
+import { ModalF3ItemModule } from './modals-f3/modal-f3-item/modal-f3-item.module';
+import { ModalF3LeitorModule } from './modals-f3/modal-f3-leitor/modal-f3-leitor.module';
+import { ModalF3LocalModule } from './modals-f3/modal-f3-local/modal-f3-local.module';
+import { ModalF3AutorModule } from './modals-f3/modal-f3-autor/modal-f3-autor.module';
+import { ModalF3SecaoModule } from './modals-f3/modal-f3-secao/modal-f3-secao.module';
+import { AppReservaComponent } from './consultas-e-reservas/app-reserva/app-reserva.component';
+import { EditoraDialogComponent } from './dialogs/editora-dialog/editora-dialog.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { FormsModule } from '@angular/forms';
         AppReservaComponent,
         AppConsultaItemComponent,
         AppConsultaReservaComponent,
-        AutorDialogComponent
+        AutorDialogComponent,
+        EditoraDialogComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
