@@ -13,7 +13,7 @@
           <mat-form-field id="CbTipoIntem" appearance="fill">
             <mat-label> Tipo da Movimentação</mat-label>
             <mat-select>
-                <mat-option *ngFor="let mov of movs" [value]="mov.value">
+                <mat-option id="tipo" *ngFor="let mov of movs" [value]="mov.value">
                   {{mov.viewValue}}
                 </mat-option>
             </mat-select>
@@ -100,8 +100,8 @@
           <mat-form-field appearance="fill">
             <mat-label>Data de Reserva e Devolução</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Start date">
-              <input matEndDate placeholder="End date">
+              <input matStartDate placeholder="data inicial">
+              <input matEndDate placeholder="data final">
             </mat-date-range-input>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>

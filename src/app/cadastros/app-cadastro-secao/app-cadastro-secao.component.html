@@ -1,4 +1,43 @@
 <section class="cadSecao">
+  <div class="header">
+    <h1 class="titSecao">Cadastro Secao</h1>
+    <button mat-fab color="primary" matTooltip="Cadastrar Secao" (click)="openDialog(null)" >
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaSecao [dataSource]="secao" class="tabelaEditora">
+      <ng-container matColumnDef="codSecao">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let secao"> {{secao.codSecao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeSecao">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let secao"> {{secao.nomeSecao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let secao">
+          <button mat-icon-button (click)="updateSecao(secao)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteSecao(secao.codSecao)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+
+<!-- <section class="cadSecao">
   <form class="frmSecao">
     <div>
        <h1 class="titSecao">Cadastro Seção</h1>
@@ -20,4 +59,4 @@
 
     <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
   </form>
-</section>
+</section> -->
