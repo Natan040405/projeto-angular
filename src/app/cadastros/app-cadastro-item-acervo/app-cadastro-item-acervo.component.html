@@ -1,4 +1,104 @@
 <section class="cadItemAcervo">
+  <div class="header">
+    <h1 class="titItemAcervo">Cadastro ItemAcervo</h1>
+    <button mat-fab color="primary" matTooltip="Cadastrar Item Acervo" (click)="openDialog(null)">
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaItemAcervo [dataSource]="itemAcervo" class="tabelaItemAcervo">
+      <ng-container matColumnDef="codItem">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.codItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeItem">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.nomeItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipoItem">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.tipoItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numExemplar">
+        <th mat-header-cell *matHeaderCellDef> Exemplar </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.numExemplar}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="volItem">
+        <th mat-header-cell *matHeaderCellDef> Volume </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.volItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeAutor">
+        <th mat-header-cell *matHeaderCellDef> Autor </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.nomeAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codAutor">
+        <th mat-header-cell *matHeaderCellDef> Cód. Autor </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.codAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeLocal">
+        <th mat-header-cell *matHeaderCellDef> Local </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.nomeLocal}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codLocal">
+        <th mat-header-cell *matHeaderCellDef> Cód. Local </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.codLocal}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeEditora">
+        <th mat-header-cell *matHeaderCellDef> Editora </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.nomeEditora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codEditora">
+        <th mat-header-cell *matHeaderCellDef> Cód. Editora </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.codEditora}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="localizacaoItem">
+        <th mat-header-cell *matHeaderCellDef> Localização </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.localizacaoItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="secaoItem">
+        <th mat-header-cell *matHeaderCellDef> Seção </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.secaoItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="anoEditItem">
+        <th mat-header-cell *matHeaderCellDef> Ano da Edição </th>
+        <td mat-cell *matCellDef="let itemAcervo"> {{itemAcervo.anoEditItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let itemAcervo">
+          <button mat-icon-button (click)="updateItemAcervo(itemAcervo)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteItemAcervo(itemAcervo.codItem)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+
+
+<!-- <section class="cadItemAcervo">
   <form class="frmItemAcervo">
     <div>
        <h1 class="titItemAcervo">Cadastro Item Acervo</h1>
@@ -59,7 +159,7 @@
         </div>
 
       </div>
-<!-- fim Coluna01 -->
+ fim Coluna01
       <div class="coluna02">
 
         <div class="f3Editora">
@@ -104,7 +204,7 @@
         </div>
 
       </div>
-      <!-- fim Coluna 02 -->
+       fim Coluna 02 -
 
       <div class="coluna03">
 
@@ -140,9 +240,9 @@
 
       </div>
     </div>
-    <!-- fim Linha -->
+     fim Linha
     <div class="botoes">
-      <!-- <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir> -->
+       <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
     </div>
   </form>
-</section>
+</section> -->

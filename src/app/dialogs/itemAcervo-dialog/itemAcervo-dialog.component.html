@@ -1,0 +1,165 @@
+<div class="cadItem">
+
+  <h1 *ngIf="isChange" mat-dialog-title>Atualizar Item</h1>
+  <h1 *ngIf="!isChange" mat-dialog-title>Cadastrar Item</h1>
+  <div mat-dialog-content >
+
+
+
+        <div class="linha">
+
+          <div class="coluna01">
+
+            <div>
+              <mat-form-field id='codItem' appearance="fill">
+                <mat-label>Código</mat-label>
+                <input matInput [(ngModel)]="data.codItem">
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field id="nomeItem" appearance="fill">
+                <mat-label>Nome</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div class="f3Local">
+              <div>
+                <mat-form-field id='codLocal' appearance="fill">
+                  <mat-label>Código Local</mat-label>
+                  <input matInput >
+                </mat-form-field>
+              </div>
+              <div class="f3-local" (click)="modalLocal.toggleLocal()">
+                <mat-icon>search</mat-icon>
+              </div>
+              <app-modal-f3-local #modalLocal></app-modal-f3-local>
+            </div>
+
+            <div>
+              <mat-form-field id="nomeLocal" appearance="fill">
+                <mat-label>Nome Local</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div class="f3Autor">
+
+              <div>
+                <mat-form-field id="codAutor" appearance="fill">
+                  <mat-label>Código Autor</mat-label>
+                  <input matInput >
+                </mat-form-field>
+              </div>
+              <div class="f3-autor" (click)="modalAutor.toggleAutor()">
+                <mat-icon>search</mat-icon>
+              </div>
+              <app-modal-f3-autor #modalAutor></app-modal-f3-autor>
+            </div>
+
+          </div>
+     <!--fim Coluna01-->
+          <div class="coluna02">
+
+            <div>
+              <mat-form-field id="nomeAutor" appearance="fill">
+                <mat-label>Autor</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div class="f3Editora">
+              <div>
+                <mat-form-field id="codEditora" appearance="fill">
+                  <mat-label>Código Editora</mat-label>
+                  <input matInput >
+                </mat-form-field>
+              </div>
+              <div class="f3-editora" (click)="modalEditora.toggleEditora()">
+                <mat-icon>search</mat-icon>
+              </div>
+              <app-modal-f3-editora #modalEditora></app-modal-f3-editora>
+            </div>
+
+            <div>
+              <mat-form-field id="nomeEditora" appearance="fill">
+                <mat-label>Editora</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field id="CbTipoIntem" appearance="fill">
+                <mat-label>Tipo do Item</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                      {{Tipo.viewValue}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field id="numExemplar" appearance="fill">
+                <mat-label>Número do Exemplar</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+          </div>
+           <!--fim Coluna 02 -->
+
+          <div class="coluna03">
+
+            <div>
+              <mat-form-field id="volItem" appearance="fill">
+                <mat-label>Volume</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field id="anoEdicao" appearance="fill">
+                <mat-label>Ano da Edição</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div class="f3Secao">
+              <div>
+                <mat-form-field id="codSecao" appearance="fill">
+                  <mat-label>Código da Seção</mat-label>
+                  <input matInput >
+                </mat-form-field>
+              </div>
+              <div class="f3-secao" (click)="modalSecao.toggleSecao()">
+                <mat-icon>search</mat-icon>
+              </div>
+              <app-modal-f3-secao #modalSecao></app-modal-f3-secao>
+            </div>
+
+            <div>
+              <mat-form-field id="nomeSecao" appearance="fill">
+                <mat-label>Seção</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div>
+              <mat-form-field id="local" appearance="fill">
+                <mat-label>Local</mat-label>
+                <input matInput >
+              </mat-form-field>
+            </div>
+
+          </div>
+        </div>
+         <!--fim Linha-->
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button>
+    <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  </div>
+</div>

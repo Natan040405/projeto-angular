@@ -10,10 +10,17 @@ import Editora from 'src/app/models/editora';
 
 export class EditoraDialogComponent implements OnInit {
 
+  isChange!: boolean;
+
   constructor(public dialogref: MatDialogRef<EditoraDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Editora) {}
 
   ngOnInit(): void {
+    if(this.data.codEditora != ''){
+      this.isChange = true;
+    } else {
+      this.isChange = false;
+    }
   }
 
   onCancel(){

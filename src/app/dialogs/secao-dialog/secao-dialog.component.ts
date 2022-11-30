@@ -10,10 +10,18 @@ import Secao from "src/app/models/secao";
 
 export class SecaoDialogComponent implements OnInit{
 
+  isChange!: boolean;
+
   constructor(public dialogref: MatDialogRef<SecaoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Secao) { }
 
     ngOnInit(): void {
+      if(this.data.codSecao != ''){
+        this.isChange = true;
+      }else{
+        this.isChange = false;
+      }
+
     }
 
   onCancel(){

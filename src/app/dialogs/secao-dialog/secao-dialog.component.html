@@ -1,7 +1,7 @@
 <div class="cadSecao">
 
-  <!-- <h1 *ngIf="isChange" mat-dialog-title>Atualizar Editora</h1> -->
-  <h1 mat-dialog-title>Cadastrar Secao</h1>
+  <h1 *ngIf="isChange" mat-dialog-title>Atualizar Seção</h1>
+  <h1 *ngIf="!isChange" mat-dialog-title>Cadastrar Seção</h1>
   <div mat-dialog-content >
 
     <div id="nomeSecao">
@@ -15,7 +15,7 @@
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="onCancel()">Cancelar</button>
-    <!-- <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button> -->
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+    <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button>
+    <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
   </div>
 </div>

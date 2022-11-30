@@ -39,6 +39,7 @@ import { ModalF3SecaoModule } from './modals-f3/modal-f3-secao/modal-f3-secao.mo
 import { AppReservaComponent } from './consultas-e-reservas/app-reserva/app-reserva.component';
 import { EditoraDialogComponent } from './dialogs/editora-dialog/editora-dialog.component';
 import { SecaoDialogComponent } from './dialogs/secao-dialog/secao-dialog.component';
+import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { SecaoDialogComponent } from './dialogs/secao-dialog/secao-dialog.compon
         AutorDialogComponent,
         EditoraDialogComponent,
         SecaoDialogComponent,
+        ItemAcervoDialogComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
