@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import ItemAcervo from "src/app/models/itemAcervo";
+import Secao from "src/app/models/secao";
 
 interface Tipo {
   value: string;
@@ -38,6 +39,12 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.isChange = false;
     }
   }
+
+  secao: Secao[] = []
+
+  // secaoChange(){
+  //   const index = this.secao.findIndex(a => a.codSecao === )
+  // }
 
   onCancel(){
     this.dialogref.close();

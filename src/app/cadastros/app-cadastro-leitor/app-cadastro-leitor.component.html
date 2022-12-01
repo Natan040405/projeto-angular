@@ -1,5 +1,110 @@
 
 <section class="cadLeitor">
+  <div class="header">
+    <h1 class="titLeitor">Cadastro Leitor</h1>
+    <button mat-fab color="primary" matTooltip="Cadastrar Leitor" (click)="openDialog(null)">
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaLeitor [dataSource]="leitor" class="tabelaLeitor">
+      <ng-container matColumnDef="codLeitor">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.codLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeLeitor">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.nomeLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="sexoLeitor">
+        <th mat-header-cell *matHeaderCellDef> Sexo </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.sexoLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataNascimento">
+        <th mat-header-cell *matHeaderCellDef> Data de Nascimento </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.dataNascimento}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cpfLeitor">
+        <th mat-header-cell *matHeaderCellDef> CPF </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.cpfLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rgLeitor">
+        <th mat-header-cell *matHeaderCellDef> RG </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.rgLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="emailLeitor">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.emailLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefLeitor">
+        <th mat-header-cell *matHeaderCellDef> telefone </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.telefLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="cellLeitor">
+        <th mat-header-cell *matHeaderCellDef> Celular </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.cellLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endRuaLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. Rua </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endRuaLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endBairroLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. Bairro </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endBairroLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endCidadeLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. Cidade </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endCidadeLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endCepLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. CEP </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endCepLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endUFLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. UF </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endUFLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="endNumeroLeitor">
+        <th mat-header-cell *matHeaderCellDef> end. N° </th>
+        <td mat-cell *matCellDef="let leitor"> {{leitor.endNumeroLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let leitor">
+          <button mat-icon-button (click)="updateLeitor(leitor)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteLeitor(leitor.codItem)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+
+<!--
+<section class="cadLeitor">
   <form class="frmLeitor">
     <div>
        <h1 class="titLeitor">Cadastro Leitor</h1>
@@ -49,7 +154,7 @@
 
 
       </div>
-<!-- fim Coluna01 -->
+fim Coluna01
       <div class="coluna02">
 
         <div>
@@ -88,7 +193,7 @@
         </div>
 
       </div>
-      <!-- fim Coluna 02 -->
+      fim Coluna 02
 
       <div class="coluna03">
 
@@ -133,9 +238,9 @@
 
       </div>
     </div>
-    <!-- fim Linha -->
+     fim Linha
     <div class="botoes">
       <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
     </div>
   </form>
-</section>
+</section> -->

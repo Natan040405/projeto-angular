@@ -20,7 +20,7 @@
             <div>
               <mat-form-field id="nomeItem" appearance="fill">
                 <mat-label>Nome</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.nomeItem">
               </mat-form-field>
             </div>
 
@@ -28,7 +28,7 @@
               <div>
                 <mat-form-field id='codLocal' appearance="fill">
                   <mat-label>Código Local</mat-label>
-                  <input matInput >
+                  <input matInput [(ngModel)]="data.codLocal">
                 </mat-form-field>
               </div>
               <div class="f3-local" (click)="modalLocal.toggleLocal()">
@@ -40,7 +40,7 @@
             <div>
               <mat-form-field id="nomeLocal" appearance="fill">
                 <mat-label>Nome Local</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.nomeLocal">
               </mat-form-field>
             </div>
 
@@ -49,7 +49,7 @@
               <div>
                 <mat-form-field id="codAutor" appearance="fill">
                   <mat-label>Código Autor</mat-label>
-                  <input matInput >
+                  <input matInput [(ngModel)]="data.codAutor">
                 </mat-form-field>
               </div>
               <div class="f3-autor" (click)="modalAutor.toggleAutor()">
@@ -65,7 +65,7 @@
             <div>
               <mat-form-field id="nomeAutor" appearance="fill">
                 <mat-label>Autor</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.nomeAutor">
               </mat-form-field>
             </div>
 
@@ -73,7 +73,7 @@
               <div>
                 <mat-form-field id="codEditora" appearance="fill">
                   <mat-label>Código Editora</mat-label>
-                  <input matInput >
+                  <input matInput [(ngModel)]="data.codEditora">
                 </mat-form-field>
               </div>
               <div class="f3-editora" (click)="modalEditora.toggleEditora()">
@@ -85,15 +85,15 @@
             <div>
               <mat-form-field id="nomeEditora" appearance="fill">
                 <mat-label>Editora</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.nomeEditora">
               </mat-form-field>
             </div>
 
             <div>
               <mat-form-field id="CbTipoIntem" appearance="fill">
                 <mat-label>Tipo do Item</mat-label>
-                <mat-select>
-                    <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value">
+                <mat-select [(ngModel)]="data.tipoItem">
+                    <mat-option *ngFor="let Tipo of Tipos" [value]="Tipo.value" >
                       {{Tipo.viewValue}}
                     </mat-option>
                 </mat-select>
@@ -103,7 +103,7 @@
             <div>
               <mat-form-field id="numExemplar" appearance="fill">
                 <mat-label>Número do Exemplar</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.numExemplar">
               </mat-form-field>
             </div>
 
@@ -115,14 +115,14 @@
             <div>
               <mat-form-field id="volItem" appearance="fill">
                 <mat-label>Volume</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.volItem">
               </mat-form-field>
             </div>
 
             <div>
               <mat-form-field id="anoEdicao" appearance="fill">
                 <mat-label>Ano da Edição</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.anoEditItem">
               </mat-form-field>
             </div>
 
@@ -130,7 +130,7 @@
               <div>
                 <mat-form-field id="codSecao" appearance="fill">
                   <mat-label>Código da Seção</mat-label>
-                  <input matInput >
+                  <input matInput [(ngModel)]="data.secaoItem">
                 </mat-form-field>
               </div>
               <div class="f3-secao" (click)="modalSecao.toggleSecao()">
@@ -149,7 +149,7 @@
             <div>
               <mat-form-field id="local" appearance="fill">
                 <mat-label>Local</mat-label>
-                <input matInput >
+                <input matInput [(ngModel)]="data.localizacaoItem">
               </mat-form-field>
             </div>
 

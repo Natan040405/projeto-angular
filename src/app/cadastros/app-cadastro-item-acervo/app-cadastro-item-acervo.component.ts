@@ -1,9 +1,9 @@
 import { ItemAcervoService } from './../../services/itemAcervo.service';
 import { ItemAcervoDialogComponent } from './../../dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
-import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import ItemAcervo from 'src/app/models/itemAcervo';
+import { MatTable } from '@angular/material/table';
 
 
 @Component({
@@ -12,9 +12,6 @@ import ItemAcervo from 'src/app/models/itemAcervo';
   styleUrls:['./app-cadastro-item-acervo.component.scss']
 })
 export class AppCadastroItemAcervoComponent implements OnInit{
-
-  ngOnInit(): void {
-  }
 
   constructor(
     public dialog: MatDialog,
@@ -25,13 +22,18 @@ export class AppCadastroItemAcervoComponent implements OnInit{
       this.itemAcervo = data
     })
   }
-  itemAcervo: ItemAcervo[] = []
 
+  ngOnInit(): void {
+  }
+
+  @ViewChild(MatTable)
+  tabelaItem!: MatTable<any>
+  itemAcervo: ItemAcervo[] = [];
   displayedColumns: string[] = ['codItem', 'nomeItem', 'tipoItem', 'numExemplar', 'volItem', 'nomeAutor',
   'codAutor', 'nomeLocal', 'codLocal', 'nomeEditora', 'codEditora',  'localizacaoItem', 'secaoItem', 'anoEditItem', 'actions']
 
   openDialog(itemAcervo: ItemAcervo | null) {
-    const DialogRef = this.dialog.open(ItemAcervoDialogComponent, {
+    const dialogRef = this.dialog.open(ItemAcervoDialogComponent, {
       width: '100%',
       data: itemAcervo != null ?
       itemAcervo : {
@@ -50,6 +52,40 @@ export class AppCadastroItemAcervoComponent implements OnInit{
         localizacaoItem: '',
         secaoItem: '',
       }
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result !== undefined) {
+        if(this.itemAcervo.map(a=> a.codItem).includes(result.codItem)) {
+          this.itemAcervoService.updateItemAcervo(result)
+          .subscribe(data=> {
+            const index = this.itemAcervo.findIndex(a => a.codItem === data.codItem);
+            this.itemAcervo[index] = data;
+            this.tabelaItem.renderRows();
+            window.location.reload();
+          })
+        } else{
+          this.itemAcervoService.createItemAcervo(result)
+          .subscribe(data => {
+            this.itemAcervo.push(data)
+            console.log(data);
+            this.tabelaItem.renderRows();
+            window.location.reload();
+          })
+        }
+      }
+    })
+  }
+
+  updateItemAcervo(itemAcervo: ItemAcervo) {
+    this.openDialog(itemAcervo);
+  }
+
+  deleteItemAcervo(codItem: string) {
+    this.itemAcervoService.deleteItemAcervo(codItem)
+    .subscribe(() => {
+      this.itemAcervo = this.itemAcervo.filter(a => a.codItem != codItem);
+      window.location.reload();
     })
   }
 }

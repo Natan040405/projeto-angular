@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import Leitor from "src/app/models/leitor";
 
 interface Uf {
   value: string;
@@ -10,6 +11,8 @@ interface Uf {
   templateUrl:'./app-cadastro-leitor.component.html',
   styleUrls:['./app-cadastro-leitor.component.scss']
 })
+
+
 
 export class AppCadastroLeitorComponent{
   Ufs: Uf[] = [
@@ -41,4 +44,14 @@ export class AppCadastroLeitorComponent{
     {value: 'SE', viewValue: 'SE'},
     {value: 'TO', viewValue: 'TO'}
   ];
+
+  leitor: Leitor[] = [];
+  displayedColumns: string[] = ['codLeitor', 'nomeLeitor', 'sexoLeitor', 'dataNascimento', 'cpfLeitor',
+   'rgLeitor', 'emailLeitor', 'telefLeitor', 'cellLeitor', 'endRuaLeitor', 'endBairroLeitor',
+   'endCidadeLeitor', 'endCepLeitor', 'endUFLeitor', 'endNumeroLeitor', 'actions' ]
+
+  openDialog(leitor: Leitor | null) {
+
+
+  }
 }
