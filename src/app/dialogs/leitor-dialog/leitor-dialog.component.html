@@ -1,0 +1,143 @@
+<div class="cadLeitor">
+
+  <h1 *ngIf="isChange" mat-dialog-title>Atualizar Leitor</h1>
+  <h1 *ngIf="!isChange" mat-dialog-title>Cadastrar Leitor</h1>
+  <div mat-dialog-content >
+
+    <div class="linha">
+
+      <div class="coluna01">
+
+        <div>
+          <mat-form-field id='codLeitor' appearance="fill">
+            <mat-label>Código</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeLeitor" appearance="fill">
+            <mat-label>Nome</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <label for="">Sexo: </label>
+          <mat-radio-button class="masculino" value="M" color="primary">Masculino</mat-radio-button>
+          <mat-radio-button class="feminino" value="F" color="primary">Feminino</mat-radio-button>
+        </div>
+
+        <div>
+          <mat-form-field class="dataNascimento" appearance="fill">
+            <mat-label>Data de Nascimento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="cpfLeitor" appearance="fill">
+            <mat-label>CPF</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+
+
+      </div>
+<!-- fim Coluna01 -->
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="rgLeitor" appearance="fill">
+            <mat-label>RG</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="emailLeitor" appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="telefLeitor" appearance="fill">
+            <mat-label>Telefone</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="cellLeitor" appearance="fill">
+            <mat-label>Celular</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endRuaLeitor" appearance="fill">
+            <mat-label>Rua</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
+      <!-- fim Coluna 02 -->
+
+      <div class="coluna03">
+
+        <div>
+          <mat-form-field id="endBairroLeitor" appearance="fill">
+            <mat-label>Bairro</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endCidadeLeitor" appearance="fill">
+            <mat-label>Cidade</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endCepLeitor" appearance="fill">
+            <mat-label>CEP</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label>UF</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let Uf of Ufs" [value]="Uf.value">
+                  {{Uf.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="endNumeroLeitor" appearance="fill">
+            <mat-label>Número</mat-label>
+            <input matInput type="text">
+          </mat-form-field>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button>
+    <button mat-button *ngIf="!isChange" [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  </div>
+</div>

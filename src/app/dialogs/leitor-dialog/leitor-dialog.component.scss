@@ -1,0 +1,60 @@
+.cadLeitor{
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 95%;
+}
+.linha{
+  display: flex;
+}
+
+#nomeLeitor{
+  width: 100%;
+}
+#emailLeitor{
+  width: 100%;
+}
+#endRuaLeitor{
+  width: 100%;
+}
+#endBairroLeitor{
+  width: 100%;
+}
+#endCidadeLeitor{
+  width: 100%;
+}
+.coluna01 {
+  width: 31%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 31%;
+  position: relative;
+}
+.coluna03{
+  width: 31%;
+  left: 1%;
+  position: relative;
+}
+
+.feminino{
+  padding-bottom: 10%;
+  padding-top: 1%;
+  left: 8%;
+
+  position: relative;
+}
+.masculino{
+  padding-bottom: 9%;
+  padding-top: 1%;
+  left: 4%;
+
+  position: relative;
+}
+.dataNascimento{
+  bottom: 2rem;
+  position: relative;
+}
+#cpfLeitor{
+  bottom: 2rem;
+}

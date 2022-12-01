@@ -40,6 +40,7 @@ import { AppReservaComponent } from './consultas-e-reservas/app-reserva/app-rese
 import { EditoraDialogComponent } from './dialogs/editora-dialog/editora-dialog.component';
 import { SecaoDialogComponent } from './dialogs/secao-dialog/secao-dialog.component';
 import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
+import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.component';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcerv
         EditoraDialogComponent,
         SecaoDialogComponent,
         ItemAcervoDialogComponent,
+        LeitorDialogComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],
