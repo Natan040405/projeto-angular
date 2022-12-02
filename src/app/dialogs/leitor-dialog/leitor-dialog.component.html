@@ -31,9 +31,9 @@
         </div>
 
         <div>
-          <mat-form-field class="dataNascimento" appearance="fill">
+          <mat-form-field class="dataNascimentoLeitor" appearance="fill">
             <mat-label>Data de Nascimento</mat-label>
-            <input matInput [matDatepicker]="picker" [(ngModel)]="data.dataNascimento">
+            <input matInput [matDatepicker]="picker" [(ngModel)]="data.dataNascimentoLeitor">
             <mat-hint>DD/MM/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
@@ -108,9 +108,9 @@
         </div>
 
         <div>
-          <mat-form-field id="endCepLeitor" appearance="fill">
+          <mat-form-field id="endCEPLeitor" appearance="fill">
             <mat-label>CEP</mat-label>
-            <input matInput [(ngModel)]="data.endCepLeitor">
+            <input matInput [(ngModel)]="data.endCEPLeitor">
           </mat-form-field>
         </div>
 

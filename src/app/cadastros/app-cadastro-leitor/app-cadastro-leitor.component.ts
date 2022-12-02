@@ -51,7 +51,7 @@ export class AppCadastroLeitorComponent{
 
   constructor(
     public dialog: MatDialog,
-    public leitorService: LeitorService
+    public leitorService: LeitorService,
     ){
       this.leitorService.getLeitor()
     .subscribe(data => {
@@ -62,9 +62,9 @@ export class AppCadastroLeitorComponent{
   @ViewChild(MatTable)
   tabelaLeitor!: MatTable<any>
   leitor: Leitor[] = [];
-  displayedColumns: string[] = ['codLeitor', 'nomeLeitor', 'sexoLeitor', 'dataNascimento', 'cpfLeitor',
+  displayedColumns: string[] = ['codLeitor', 'nomeLeitor', 'sexoLeitor', 'dataNascimentoLeitor', 'cpfLeitor',
    'rgLeitor', 'emailLeitor', 'telefLeitor', 'cellLeitor', 'endRuaLeitor', 'endBairroLeitor',
-   'endCidadeLeitor', 'endCepLeitor', 'endUFLeitor', 'endNumeroLeitor', 'actions' ]
+   'endCidadeLeitor', 'endCEPLeitor', 'endUFLeitor', 'endNumeroLeitor', 'actions' ]
 
   openDialog(leitor: Leitor | null) {
       const dialogRef = this.dialog.open(LeitorDialogComponent, {
@@ -74,7 +74,7 @@ export class AppCadastroLeitorComponent{
           codLeitor: '',
           nomeLeitor: '',
           sexoLeitor: '',
-          dataNascimento: '',
+          dataNascimentoLeitor: '',
           cpfLeitor: '',
           rgLeitor: '',
           emailLeitor: '',

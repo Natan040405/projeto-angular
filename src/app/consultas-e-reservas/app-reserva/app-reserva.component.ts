@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import Reserva from "src/app/models/reserva";
 
 interface mov{
   value: string;
@@ -11,6 +12,11 @@ interface mov{
   styleUrls:['./app-reserva.component.scss']
 })
 export class AppReservaComponent{
+
+  reserva: Reserva[];
+  displayedColumns: string[] = ['codItemReserva', 'situacao', "nomeItemReserva", "numExemplar",
+  "tipoItemReserva", "localizacao", "codLeitor", "nomeLeitor", "dataReserva", "prazoReserva"]
+
   movs: mov[] = [
     {value: 'Reservar', viewValue: 'Reservar'},
     {value: 'Devolver', viewValue: 'Devolver'},
@@ -24,5 +30,9 @@ export class AppReservaComponent{
   isModalItemOpened: boolean = false;
   modalF3Item(): void{
     this.isModalItemOpened =  !this.isModalItemOpened;
+  }
+
+  openDialog(reserva: Reserva | null) {
+
   }
 }

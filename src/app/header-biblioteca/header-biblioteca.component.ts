@@ -6,8 +6,16 @@ import { Component } from "@angular/core";
   styleUrls:['./header-biblioteca.component.scss']
 })
 export class HeaderBibliotecaComponent{
-  isMenuOpened: boolean = false;
-  ConsultaseReservas(): void {
-    this.isMenuOpened =  !this.isMenuOpened;
+  isMenuOpened: boolean;
+  AbreMenu() {
+    if(this.isMenuOpened == true){
+      this.isMenuOpened = false;
+    }else{
+      this.isMenuOpened = true;
+    }
+  }
+
+  FechaMenu() {
+    this.isMenuOpened = false;
   }
 }

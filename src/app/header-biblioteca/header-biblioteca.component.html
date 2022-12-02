@@ -16,8 +16,8 @@
       <li><a routerLink="app-cadastro-local">Cadastro Local</a></li>
       <li><a routerLink="app-cadastro-leitor">Cadastro Leitor</a></li>
         <div class="menu-container">
-          <div class="open" (click)="ConsultaseReservas()">Consultas e Reservas</div>
-          <div class="menu-submenu" *ngIf="isMenuOpened">
+          <div class="open" (click)="AbreMenu()">Consultas e Reservas</div>
+          <div class="menu-submenu" *ngIf="isMenuOpened" (click)="FechaMenu()">
             <div class="menu-submenu-item"><a routerLink="app-reserva">Reservar</a></div>
             <div class="menu-submenu-item"><a routerLink="app-consulta-reserva">Consultar Reserva</a></div>
             <div class="menu-submenu-item"><a routerLink="app-consulta-item">Consultar Item</a></div>

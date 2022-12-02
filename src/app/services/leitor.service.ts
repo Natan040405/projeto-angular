@@ -21,7 +21,7 @@ export class LeitorService {
     return this.http.post<Leitor>(this.leitorApiUrl, {
       nomeLeitor: leitor.nomeLeitor,
       sexoLeitor: leitor.sexoLeitor,
-      dataNascimento: leitor.dataNascimento,
+      dataNascimento: leitor.dataNascimentoLeitor,
       cpfLeitor: leitor.cpfLeitor,
       rgLeitor: leitor.rgLeitor,
       emailLeitor: leitor.emailLeitor,
@@ -30,7 +30,7 @@ export class LeitorService {
       endRuaLeitor: leitor.endRuaLeitor,
       endBairroLeitor: leitor.endBairroLeitor,
       endCidadeLeitor: leitor.endCidadeLeitor,
-      endCepLeitor: leitor.endCepLeitor,
+      endCEPLeitor: leitor.endCEPLeitor,
       endUFLeitor: leitor.endUFLeitor,
       endNumeroLeitor: leitor.endNumeroLeitor
   });

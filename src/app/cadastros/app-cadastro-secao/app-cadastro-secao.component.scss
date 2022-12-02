@@ -35,5 +35,14 @@
     width: 100%;
   }
 }
+th{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+}
+td{
+  z-index: 8;
+}
 
 

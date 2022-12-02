@@ -1,0 +1,20 @@
+<div class="cadLocal">
+
+  <h1 *ngIf="isChange" mat-dialog-title>Atualizar Local</h1>
+  <h1 *ngIf="!isChange" mat-dialog-title>Cadastrar Local</h1>
+  <div mat-dialog-content >
+
+      <div id="nomeLocal">
+        <mat-form-field id="nomeLocal" appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput [(ngModel)]="data.nomeLocal">
+        </mat-form-field>
+      </div>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button>
+    <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Cadastrar</button>
+  </div>
+</div>

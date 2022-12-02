@@ -2,7 +2,7 @@ export default interface Leitor {
   codLeitor: string,
   nomeLeitor: string,
   sexoLeitor: string,
-  dataNascimento: Date,
+  dataNascimentoLeitor: Date,
   cpfLeitor: string,
   rgLeitor: string,
   emailLeitor: string,
@@ -11,7 +11,7 @@ export default interface Leitor {
   endRuaLeitor: string,
   endBairroLeitor: string,
   endCidadeLeitor: string,
-  endCepLeitor: string,
+  endCEPLeitor: string,
   endUFLeitor: string,
   endNumeroLeitor: string
 };

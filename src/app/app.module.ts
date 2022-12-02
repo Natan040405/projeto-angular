@@ -41,6 +41,7 @@ import { EditoraDialogComponent } from './dialogs/editora-dialog/editora-dialog.
 import { SecaoDialogComponent } from './dialogs/secao-dialog/secao-dialog.component';
 import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
 import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.component';
+import { LocalDialogComponent } from './dialogs/local-dialog/local-dialog.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.com
         SecaoDialogComponent,
         ItemAcervoDialogComponent,
         LeitorDialogComponent,
+        LocalDialogComponent,
     ],
     providers: [],
     bootstrap: [AppComponent],

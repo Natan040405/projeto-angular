@@ -1,5 +1,83 @@
+<section class="cadReserva">
+  <div class="header">
+    <h1 class="titReserva">Cadastro Reserva</h1>
+    <button mat-fab color="primary" matTooltip="Reservar" (click)="openDialog(null)">
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaReserva [dataSource]="reserva" class="tabelaReserva">
+      <ng-container matColumnDef="codItemReserva">
+        <th mat-header-cell id="codItemReserva" *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.codItemReserva}} </td>
+      </ng-container>
 
-<section class="bibReserva">
+      <ng-container matColumnDef="nomeItemReserva">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.nomeItemReserva}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipoItemReserva">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.tipoItemReserva}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numExemplar">
+        <th mat-header-cell *matHeaderCellDef> Exemplar </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.numExemplar}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="localizacao">
+        <th mat-header-cell *matHeaderCellDef> Localização </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.localizacao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="situacao">
+        <th mat-header-cell *matHeaderCellDef> situação </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.situacao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codLeitor">
+        <th mat-header-cell *matHeaderCellDef> Cód. Leitor </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.codLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeLeitor">
+        <th mat-header-cell *matHeaderCellDef> Leitor </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.nomeLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataReserva">
+        <th mat-header-cell *matHeaderCellDef> Reserva </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.dataReserva}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="prazoReserva">
+        <th mat-header-cell *matHeaderCellDef> Devolução </th>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.prazoReserva}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let reserva">
+          <button mat-icon-button (click)="updateReserva(reserva)" >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="deleteReserva(reserva.codItem)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+
+<!-- <section class="bibReserva">
   <form class="frmReserva">
     <div>
        <h1 class="titReserva">Reserva</h1>
@@ -57,7 +135,7 @@
         </div>
 
       </div>
-      <!-- fim da coluna01 -->
+      fim da coluna01
 
       <div class="coluna02">
 
@@ -116,6 +194,6 @@
 
 
   </form>
-</section>
+</section> -->
 
 
