@@ -102,6 +102,7 @@ export class AppCadastroLeitorComponent{
           } else{
             this.leitorService.createLeitor(result)
             .subscribe(data => {
+              console.log(data);
               this.leitor.push(data)
               console.log(data);
               this.tabelaLeitor.renderRows();

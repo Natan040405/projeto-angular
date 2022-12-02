@@ -19,21 +19,20 @@ export class LeitorService {
 
   createLeitor(leitor: Leitor): Observable<Leitor> {
     return this.http.post<Leitor>(this.leitorApiUrl, {
-      codLeitor: leitor.codLeitor,
-    nomeLeitor: leitor.nomeLeitor,
-    sexoLeitor: leitor.sexoLeitor,
-    dataNascimento: leitor.dataNascimento,
-    cpfLeitor: leitor.cpfLeitor,
-    rgLeitor: leitor.rgLeitor,
-    emailLeitor: leitor.emailLeitor,
-    telefLeitor: leitor.telefLeitor,
-    cellLeitor: leitor.cellLeitor,
-    endRuaLeitor: leitor.endRuaLeitor,
-    endBairroLeitor: leitor.endBairroLeitor,
-    endCidadeLeitor: leitor.endCidadeLeitor,
-    endCepLeitor: leitor.endCepLeitor,
-    endUFLeitor: leitor.endUFLeitor,
-    endNumeroLeitor: leitor.endNumeroLeitor
+      nomeLeitor: leitor.nomeLeitor,
+      sexoLeitor: leitor.sexoLeitor,
+      dataNascimento: leitor.dataNascimento,
+      cpfLeitor: leitor.cpfLeitor,
+      rgLeitor: leitor.rgLeitor,
+      emailLeitor: leitor.emailLeitor,
+      telefLeitor: leitor.telefLeitor,
+      cellLeitor: leitor.cellLeitor,
+      endRuaLeitor: leitor.endRuaLeitor,
+      endBairroLeitor: leitor.endBairroLeitor,
+      endCidadeLeitor: leitor.endCidadeLeitor,
+      endCepLeitor: leitor.endCepLeitor,
+      endUFLeitor: leitor.endUFLeitor,
+      endNumeroLeitor: leitor.endNumeroLeitor
   });
   }
 
