@@ -1,0 +1,50 @@
+.linha{
+  display: flex;
+  flex-flow: row wrap;
+}
+.coluna01 {
+  width: 48%;
+  right: 1%;
+  position: relative;
+}
+.coluna02{
+  width: 48%;
+  right: 0%;
+  position: relative;
+}
+#nomeItem{
+  width: 100%;
+}
+#nomeLeitor{
+  width: 100%;
+}
+
+#localizacao{
+  width: 100%;
+}
+.titReserva{
+  font-family: 'Calibri', sans-serif ;
+  font-size: 2rem;
+}
+.date-reserva{
+  display: inline-block;
+  padding-right: 3%;
+}
+.f3Item{
+  div{
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+}
+.f3Leitor{
+  div{
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+}
+.f3-leitor{
+  cursor: pointer;
+}
+.f3-item{
+  cursor: pointer;
+}

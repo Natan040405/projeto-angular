@@ -17,6 +17,10 @@ export class LocalService {
     return this.http.get<Local[]>(this.localApiUrl)
   }
 
+  getLocaliById(codLocal: string | null) {
+    return this.http.get<Local[]>(`${this.localApiUrl}?codLocal=${codLocal}`)
+  }
+
   createLocal(local: Local): Observable<Local> {
     return this.http.post<Local>(this.localApiUrl, {
       nomeLocal: local.nomeLocal

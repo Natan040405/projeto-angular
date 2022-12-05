@@ -1,0 +1,120 @@
+<div class="cadReserva">
+
+  <h1 *ngIf="isChange" mat-dialog-title>Atualizar reserva</h1>
+  <h1 *ngIf="!isChange" mat-dialog-title>Reservar</h1>
+  <div mat-dialog-content >
+
+    <div class="linha">
+
+      <div class="coluna01">
+
+        <div>
+          <mat-form-field id="CbTipoIntem" appearance="fill">
+            <mat-label> Tipo da Movimentação</mat-label>
+            <mat-select>
+                <mat-option id="tipo" *ngFor="let mov of movs" [value]="mov.value">
+                  {{mov.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="f3Item">
+
+          <div>
+            <mat-form-field id="codItem" appearance="fill">
+              <mat-label>Código do Item</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <div class="f3-item" (click)="modal.toggleItem()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-item #modal></app-modal-f3-item>
+
+        </div>
+
+        <div>
+          <mat-form-field id="nomeItem" appearance="fill">
+            <mat-label>Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="numExemplar" appearance="fill">
+            <mat-label>Número do Exemplar</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="tipoItem" appearance="fill">
+            <mat-label>Tipo do Item</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <!-- fim da coluna01 -->
+
+      <div class="coluna02">
+
+        <div>
+          <mat-form-field id="localizacao" appearance="fill">
+            <mat-label>Localização</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="f3Leitor">
+
+          <div>
+            <mat-form-field id="codLeitor" appearance="fill">
+              <mat-label>Código do Leitor</mat-label>
+              <input matInput [(ngModel)]="dataleitor.codLeitor">
+            </mat-form-field>
+          </div>
+          <div class="f3-item" (click)="modales.toggleleitor()">
+            <mat-icon>search</mat-icon>
+          </div>
+          <app-modal-f3-leitor #modales ></app-modal-f3-leitor>
+        </div>
+
+        <div>
+          <mat-form-field id="nomeLeitor" appearance="fill">
+            <mat-label>Leitor</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field id="situacao" appearance="fill">
+            <mat-label>Situação</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <div class="date">
+          <mat-form-field appearance="fill">
+            <mat-label>Data de Reserva e Devolução</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="data inicial">
+              <input matEndDate placeholder="data final">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button *ngIf="isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Atualizar</button>
+    <button *ngIf="!isChange" mat-button [mat-dialog-close]="data" cdkFocusInitial>Reservar</button>
+  </div>
+</div>

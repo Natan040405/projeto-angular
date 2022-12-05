@@ -14,10 +14,10 @@ export class AppCadastroLocalComponent implements OnInit{
 
   constructor (public dialog: MatDialog,
     public localService: LocalService) {
-      this.localService.getLocal()
-      .subscribe(data => {
-        this.local = data
-      })
+        this.localService.getLocal()
+        .subscribe(data => {
+          this.local = data
+        })
   }
 
   ngOnInit(): void {
@@ -74,4 +74,5 @@ export class AppCadastroLocalComponent implements OnInit{
       window.location.reload();
     })
   }
+
 }
