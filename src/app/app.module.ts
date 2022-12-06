@@ -43,7 +43,6 @@ import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcerv
 import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.component';
 import { LocalDialogComponent } from './dialogs/local-dialog/local-dialog.component';
 import { ReservaDialogComponent } from './dialogs/reserva-dialog/reserva-dialog.component';
-import { Select2Module } from 'ng-select2-component';
 
 
 @NgModule({
@@ -96,7 +95,6 @@ import { Select2Module } from 'ng-select2-component';
         MatDialogModule,
         MatTooltipModule,
         FormsModule,
-        Select2Module,
     ]
 })
 export class AppModule { }

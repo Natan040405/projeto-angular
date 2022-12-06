@@ -24,14 +24,13 @@
           <div>
             <mat-form-field id="codItem" appearance="fill">
               <mat-label>Código do Item</mat-label>
-              <input matInput [(ngModel)]="data.codItemReserva">
+              <mat-select>
+                  <mat-option id="tipo" *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem">
+                    {{ItemAcervo.nomeItem}}
+                  </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
-          <div class="f3-item" (click)="modal.toggleItem()">
-            <mat-icon>search</mat-icon>
-          </div>
-          <app-modal-f3-item #modal></app-modal-f3-item>
-
         </div>
 
         <div>
@@ -71,14 +70,14 @@
 
           <div>
             <mat-form-field id="codLeitor" appearance="fill">
-              <mat-label>Código do Leitor</mat-label>
-              <input matInput [(ngModel)]="data.codLeitor">
+              <mat-label>código do Leitor</mat-label>
+              <mat-select>
+                  <mat-option id="tipo" *ngFor="let Leitor of Leitores" [value]="Leitor.codLeitor">
+                    {{Leitor.nomeLeitor}}
+                  </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
-          <div class="f3-item" (click)="modales.toggleleitor()">
-            <mat-icon>search</mat-icon>
-          </div>
-          <app-modal-f3-leitor #modales ></app-modal-f3-leitor>
         </div>
 
         <div>

@@ -1,5 +1,5 @@
+import { EditoraService } from './../../services/editora.service';
 import { SecaoService } from './../../services/secao.service';
-import  Local  from 'src/app/models/local';
 import { LocalService } from './../../services/local.service';
 import { AutorService } from './../../services/autor.service';
 import { ItemAcervoService } from './../../services/itemAcervo.service';
@@ -8,6 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import ItemAcervo from "src/app/models/itemAcervo";
 import Secao from "src/app/models/secao";
 import Autor from 'src/app/models/autor';
+import Local  from 'src/app/models/local';
+import Editora from 'src/app/models/editora';
 
 interface Tipo {
   value: string;
@@ -33,6 +35,8 @@ export class ItemAcervoDialogComponent implements OnInit{
 
   Secoes: Secao[] = []
 
+  Editoras: Editora[] = []
+
   Tipos: Tipo[] = [
     {value:'livro' , viewValue:'Livro'},
     {value:'revista' , viewValue:'Revista'},
@@ -51,20 +55,23 @@ export class ItemAcervoDialogComponent implements OnInit{
     public itemAcervoService: ItemAcervoService,
     public autorService: AutorService,
     public localService: LocalService,
-    public secaoService: SecaoService) {
+    public secaoService: SecaoService,
+    public editoraService: EditoraService,
+    ) {
      }
 
   ngOnInit(): void {
     this.autorService.getAutor().subscribe((data:any) => {
       this.Autores = data;
-      console.log(data)
     })
     this.localService.getLocal().subscribe(data => {
       this.Locais = data;
     })
     this.secaoService.getSecao().subscribe(data => {
-      this.Secoes = data
-      console.log(data)
+      this.Secoes = data;
+    })
+    this.editoraService.getEditora().subscribe(data => {
+      this.Editoras = data;
     })
     if(this.data.codItem != ''){
       this.isChange = true;

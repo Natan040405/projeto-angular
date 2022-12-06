@@ -1,6 +1,8 @@
-import { LeitorDialogComponent } from './../leitor-dialog/leitor-dialog.component';
+import { LeitorService } from './../../services/leitor.service';
+import { ItemAcervoService } from './../../services/itemAcervo.service';
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import ItemAcervo from 'src/app/models/itemAcervo';
 import Reserva from "src/app/models/reserva";
 import Leitor from 'src/app/models/leitor';
 
@@ -19,6 +21,10 @@ export class ReservaDialogComponent implements OnInit {
 
   isChange!: boolean;
 
+  ItensAcervo: ItemAcervo[] = []
+
+  Leitores: Leitor[] = []
+
   movs: mov[] = [
     {value: 'Reservar', viewValue: 'Reservar'},
     {value: 'Devolver', viewValue: 'Devolver'},
@@ -26,12 +32,18 @@ export class ReservaDialogComponent implements OnInit {
 
   constructor(public dialogref: MatDialogRef<ReservaDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Reserva,
-    public dialogrefleitor: MatDialogRef<LeitorDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public dataleitor: Leitor,) {
+    public itemAcervoService: ItemAcervoService,
+    public leitorService: LeitorService) {
 
   }
 
   ngOnInit(): void {
+    this.itemAcervoService.getItemAcervo().subscribe(data => {
+      this.ItensAcervo = data;
+    })
+    this.leitorService.getLeitor().subscribe(data => {
+      this.Leitores = data;
+    })
   }
 
   onCancel() {

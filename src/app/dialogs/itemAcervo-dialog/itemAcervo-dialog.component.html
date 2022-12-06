@@ -83,13 +83,13 @@
               <div>
                 <mat-form-field id="codEditora" appearance="fill">
                   <mat-label>Código Editora</mat-label>
-                  <input matInput [(ngModel)]="data.codEditora">
+                  <mat-select [(ngModel)]="data.codAutor">
+                    <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora">
+                      {{Editora.nomeEditora}}
+                    </mat-option>
+                </mat-select>
                 </mat-form-field>
               </div>
-              <div class="f3-editora" (click)="modalEditora.toggleEditora()">
-                <mat-icon>search</mat-icon>
-              </div>
-              <app-modal-f3-editora #modalEditora></app-modal-f3-editora>
             </div>
 
             <div>
@@ -140,13 +140,13 @@
               <div>
                 <mat-form-field id="codSecao" appearance="fill">
                   <mat-label>Código da Seção</mat-label>
-                  <input matInput [(ngModel)]="data.secaoItem">
+                  <mat-select [(ngModel)]="data.secaoItem">
+                      <mat-option *ngFor="let Secao of Secoes" [value]="Secao.codSecao" >
+                        {{Secao.nomeSecao}}
+                      </mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
-              <div class="f3-secao" (click)="modalSecao.toggleSecao()">
-                <mat-icon>search</mat-icon>
-              </div>
-              <app-modal-f3-secao #modalSecao></app-modal-f3-secao>
             </div>
 
             <div>

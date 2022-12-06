@@ -29,14 +29,9 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss",
-              "styles.css",
-              "node_modules/select2/dist/css/select2.min.css"
+              "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.js",
-              "node_modules/select2/dist/js/select2.min.js"
-            ]
+            "scripts": [ ]
           },
           "configurations": {
             "production": {
