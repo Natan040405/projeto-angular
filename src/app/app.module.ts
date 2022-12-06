@@ -1,7 +1,7 @@
 import { ModalF3EditoraModule } from './modals-f3/modal-f3-editora/modal-f3-editora.module';
 import { AppConsultaReservaComponent } from './consultas-e-reservas/app-consulta-reserva/app-consulta-reserva.component';
 import { AppConsultaItemComponent } from './consultas-e-reservas/app-consulta-item/app-consulta-item.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +43,7 @@ import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcerv
 import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.component';
 import { LocalDialogComponent } from './dialogs/local-dialog/local-dialog.component';
 import { ReservaDialogComponent } from './dialogs/reserva-dialog/reserva-dialog.component';
+import { Select2Module } from 'ng-select2-component';
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import { ReservaDialogComponent } from './dialogs/reserva-dialog/reserva-dialog.
         MatDialogModule,
         MatTooltipModule,
         FormsModule,
+        Select2Module,
     ]
 })
 export class AppModule { }

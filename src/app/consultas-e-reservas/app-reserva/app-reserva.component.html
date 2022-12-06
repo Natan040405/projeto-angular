@@ -49,12 +49,12 @@
 
       <ng-container matColumnDef="dataReserva">
         <th mat-header-cell *matHeaderCellDef> Reserva </th>
-        <td mat-cell *matCellDef="let reserva"> {{reserva.dataReserva}} </td>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.dataReserva | date: 'dd/MM/yyyy'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="prazoReserva">
         <th mat-header-cell *matHeaderCellDef> Devolução </th>
-        <td mat-cell *matCellDef="let reserva"> {{reserva.prazoReserva}} </td>
+        <td mat-cell *matCellDef="let reserva"> {{reserva.prazoReserva | date: 'dd/MM/yyyy'}} </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
@@ -64,7 +64,7 @@
             <mat-icon>edit</mat-icon>
           </button>
 
-          <button mat-icon-button (click)="deleteReserva(reserva.codItem)" >
+          <button mat-icon-button (click)="deleteReserva(reserva.codItemReserva)" >
             <mat-icon>delete</mat-icon>
           </button>
         </td>

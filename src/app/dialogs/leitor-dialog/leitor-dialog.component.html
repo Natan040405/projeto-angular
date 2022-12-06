@@ -117,13 +117,14 @@
         <div>
           <mat-form-field id="CbTipoIntem" appearance="fill">
             <mat-label>UF</mat-label>
-            <mat-select [(ngModel)]="data.endUFLeitor">
+            <mat-select [(ngModel)]="data.endUFLeitor" id="estados">
                 <mat-option *ngFor="let Uf of Ufs" [value]="Uf.value">
                   {{Uf.viewValue}}
                 </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
+
 
         <div>
           <mat-form-field id="endNumeroLeitor" appearance="fill">

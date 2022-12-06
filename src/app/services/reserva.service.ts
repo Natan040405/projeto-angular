@@ -10,7 +10,7 @@ import { Injectable } from "@angular/core";
 export class ReservaService {
 
 
-  reservaApiUrl = 'https://localhost:7048/reserva'
+  reservaApiUrl = 'https://localhost:7048/reserva';
 
   constructor (private http: HttpClient) {
 
@@ -36,10 +36,10 @@ export class ReservaService {
   }
 
   updateReserva(reserva: Reserva): Observable<Reserva> {
-    return this.http.put<Reserva>(this.reservaApiUrl, reserva)
+    return this.http.put<Reserva>(this.reservaApiUrl, reserva);
   }
 
   deleteReserva(codItemReserva: string) {
-    return this.http.delete(`${this.reservaApiUrl}?codItemReserva=${codItemReserva}`)
+    return this.http.delete(`${this.reservaApiUrl}?codItemReserva=${codItemReserva}`);
   }
 }

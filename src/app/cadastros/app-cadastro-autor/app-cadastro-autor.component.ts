@@ -22,6 +22,7 @@ export class AppCadastroAutorComponent implements OnInit {
     ) {
       this.autorService.getAutor()
     .subscribe(data => {
+      console.log(data);
       this.autor = data
     })
 

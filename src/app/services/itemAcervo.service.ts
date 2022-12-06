@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import Autor from "../models/autor";
 import ItemAcervo from "../models/itemAcervo";
 
 @Injectable({
@@ -9,7 +10,12 @@ import ItemAcervo from "../models/itemAcervo";
 
 export class ItemAcervoService {
   itemAcervoApiUrl = 'https://localhost:7048/itemacervo';
+  autorApiUrl = 'https://localhost:7048/autor';
   constructor(private http: HttpClient) { }
+
+  getAutor(): Observable<Autor[]> {
+    return this.http.get<Autor[]>(this.autorApiUrl)
+  }
 
   getItemAcervo(): Observable<ItemAcervo[]> {
     return this.http.get<ItemAcervo[]>(this.itemAcervoApiUrl)

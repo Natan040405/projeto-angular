@@ -30,8 +30,8 @@ export class AppReservaComponent{
   tabelaReserva!: MatTable<any>
   reserva: Reserva[];
   leitor: Leitor[];
-  displayedColumns: string[] = ['codItemReserva', 'situacao', "nomeItemReserva", "numExemplar",
-  "tipoItemReserva", "localizacao", "codLeitor", "nomeLeitor", "dataReserva", "prazoReserva"]
+  displayedColumns: string[] = ["codItemReserva", "situacao", "nomeItemReserva", "numExemplar",
+  "tipoItemReserva", "localizacao", "codLeitor", "nomeLeitor", "dataReserva", "prazoReserva", "actions"]
 
   movs: mov[] = [
     {value: 'Reservar', viewValue: 'Reservar'},
@@ -87,6 +87,17 @@ export class AppReservaComponent{
           })
         }
       }
+    })
+  }
+
+  updateReserva(reserva: Reserva) {
+    this.openDialog(reserva);
+  }
+
+  deleteReserva(codItemReserva: string) {
+    this.reservaService.deleteReserva(codItemReserva)
+    .subscribe(() => {
+      this.reserva = this.reserva.filter(a => a.codItemReserva != codItemReserva);
     })
   }
 }

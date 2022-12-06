@@ -24,7 +24,7 @@
           <div>
             <mat-form-field id="codItem" appearance="fill">
               <mat-label>Código do Item</mat-label>
-              <input matInput>
+              <input matInput [(ngModel)]="data.codItemReserva">
             </mat-form-field>
           </div>
           <div class="f3-item" (click)="modal.toggleItem()">
@@ -37,21 +37,21 @@
         <div>
           <mat-form-field id="nomeItem" appearance="fill">
             <mat-label>Item</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.nomeItemReserva">
           </mat-form-field>
         </div>
 
         <div>
           <mat-form-field id="numExemplar" appearance="fill">
             <mat-label>Número do Exemplar</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.numExemplar">
           </mat-form-field>
         </div>
 
         <div>
           <mat-form-field id="tipoItem" appearance="fill">
             <mat-label>Tipo do Item</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.tipoItemReserva">
           </mat-form-field>
         </div>
 
@@ -63,7 +63,7 @@
         <div>
           <mat-form-field id="localizacao" appearance="fill">
             <mat-label>Localização</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.localizacao">
           </mat-form-field>
         </div>
 
@@ -72,7 +72,7 @@
           <div>
             <mat-form-field id="codLeitor" appearance="fill">
               <mat-label>Código do Leitor</mat-label>
-              <input matInput [(ngModel)]="dataleitor.codLeitor">
+              <input matInput [(ngModel)]="data.codLeitor">
             </mat-form-field>
           </div>
           <div class="f3-item" (click)="modales.toggleleitor()">
@@ -84,14 +84,14 @@
         <div>
           <mat-form-field id="nomeLeitor" appearance="fill">
             <mat-label>Leitor</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.nomeLeitor">
           </mat-form-field>
         </div>
 
         <div>
           <mat-form-field id="situacao" appearance="fill">
             <mat-label>Situação</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]="data.situacao">
           </mat-form-field>
         </div>
 
@@ -99,8 +99,8 @@
           <mat-form-field appearance="fill">
             <mat-label>Data de Reserva e Devolução</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="data inicial">
-              <input matEndDate placeholder="data final">
+              <input matStartDate placeholder="data inicial" [(ngModel)]="data.dataReserva">
+              <input matEndDate placeholder="data final" [(ngModel)]="data.prazoReserva">
             </mat-date-range-input>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>

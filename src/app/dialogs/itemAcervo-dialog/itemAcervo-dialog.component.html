@@ -17,25 +17,27 @@
               </mat-form-field>
             </div>
 
-            <div>
-              <mat-form-field id="nomeItem" appearance="fill">
+            <div >
+              <mat-form-field id="nomeItem" appearance="fill" >
                 <mat-label>Nome</mat-label>
                 <input matInput [(ngModel)]="data.nomeItem">
               </mat-form-field>
             </div>
 
+
             <div class="f3Local">
               <div>
                 <mat-form-field id='codLocal' appearance="fill">
-                  <mat-label>Código Local</mat-label>
-                  <input matInput [(ngModel)]="data.codLocal">
+                  <mat-label>Código do Local</mat-label>
+                <mat-select [(ngModel)]="data.codLocal">
+                    <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal">
+                      {{Local.nomeLocal}}
+                    </mat-option>
+                </mat-select>
                 </mat-form-field>
               </div>
-              <div class="f3-local" (click)="modalLocal.toggleLocal()">
-                <mat-icon>search</mat-icon>
-              </div>
-              <app-modal-f3-local #modalLocal></app-modal-f3-local>
             </div>
+
 
             <div>
               <mat-form-field id="nomeLocal" appearance="fill">
@@ -46,26 +48,34 @@
 
             <div class="f3Autor">
 
-              <div>
-                <mat-form-field id="codAutor" appearance="fill">
-                  <mat-label>Código Autor</mat-label>
-                  <input matInput [(ngModel)]="data.codAutor">
+              <div (click)="valor()">
+                <mat-form-field id="codAutor" appearance="fill" >
+                  <mat-label>Código do Autor</mat-label>
+              <mat-select [(ngModel)]="data.codAutor">
+                  <mat-option *ngFor="let Autor of Autores" [value]="Autor.codAutor">
+                    {{Autor.nomeAutor}}
+                  </mat-option>
+              </mat-select>
                 </mat-form-field>
               </div>
-              <div class="f3-autor" (click)="modalAutor.toggleAutor()">
-                <mat-icon>search</mat-icon>
-              </div>
-              <app-modal-f3-autor #modalAutor></app-modal-f3-autor>
             </div>
 
           </div>
+
      <!--fim Coluna01-->
           <div class="coluna02">
 
-            <div>
+            <div *ngIf="!isValid">
               <mat-form-field id="nomeAutor" appearance="fill">
                 <mat-label>Autor</mat-label>
                 <input matInput [(ngModel)]="data.nomeAutor">
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="isValid">
+              <mat-form-field id="nomeAutor" appearance="fill">
+                <mat-label>Autor</mat-label>
+                <input matInput [(ngModel)]="data.nomeAutor" #codAutor [value]="codAutor.value">
               </mat-form-field>
             </div>
 
