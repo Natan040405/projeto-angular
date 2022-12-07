@@ -17,6 +17,10 @@ export class AutorService {
     return this.http.get<Autor[]>(this.autorApiUrl)
   }
 
+  getAutorById(codAutor: string) {
+    return this.http.get<Autor[]>(`${this.autorApiUrl}/${codAutor}`)
+  }
+
   createAutor(autor: Autor): Observable<Autor> {
     return this.http.post<Autor>(this.autorApiUrl, {
       nomeAutor: autor.nomeAutor,

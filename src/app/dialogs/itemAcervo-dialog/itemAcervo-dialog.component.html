@@ -29,15 +29,23 @@
               <div>
                 <mat-form-field id='codLocal' appearance="fill">
                   <mat-label>Código do Local</mat-label>
-                <mat-select [(ngModel)]="data.codLocal">
-                    <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal">
-                      {{Local.nomeLocal}}
-                    </mat-option>
-                </mat-select>
+                  <mat-select [(ngModel)]="data.codLocal">
+                      <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal" (click)="f3codLocal()">
+                        {{Local.nomeLocal}}
+                      </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field (click)="f3codLocal()" id='codLocal' appearance="fill">
+                  <mat-label>Código do Local</mat-label>
+                  <mat-select [(ngModel)]="data.codLocal">
+                      <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal">
+                        {{Local.nomeLocal}}
+                      </mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
             </div>
-
 
             <div>
               <mat-form-field id="nomeLocal" appearance="fill">
@@ -48,14 +56,26 @@
 
             <div class="f3Autor">
 
-              <div (click)="valor()">
+              <div *ngIf="!isValidAutor">
                 <mat-form-field id="codAutor" appearance="fill" >
                   <mat-label>Código do Autor</mat-label>
-              <mat-select [(ngModel)]="data.codAutor">
-                  <mat-option *ngFor="let Autor of Autores" [value]="Autor.codAutor">
-                    {{Autor.nomeAutor}}
+              <mat-select  [(ngModel)]="data.codAutor">
+                  <mat-option *ngFor="let Autor of Autores"  [value]="Autor.codAutor" (click)="f3codAutor()">
+                    {{Autor.codAutor}} / / {{Autor.nomeAutor}}
                   </mat-option>
               </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div *ngIf="isValidAutor" >
+                <mat-form-field (click)="f3codAutor()" id="codAutor" appearance="fill" >
+                  <mat-label>Código do Autor</mat-label>
+
+                  <mat-select  [(ngModel)]="data.codAutor">
+                      <mat-option *ngFor="let Autor of Autores"  [value]="Autor.codAutor" >
+                        {{data.codAutor}}
+                      </mat-option>
+                  </mat-select>
                 </mat-form-field>
               </div>
             </div>
@@ -65,17 +85,17 @@
      <!--fim Coluna01-->
           <div class="coluna02">
 
-            <div *ngIf="!isValid">
+            <div *ngIf="!isValidAutor">
               <mat-form-field id="nomeAutor" appearance="fill">
                 <mat-label>Autor</mat-label>
                 <input matInput [(ngModel)]="data.nomeAutor">
               </mat-form-field>
             </div>
 
-            <div *ngIf="isValid">
+            <div *ngIf="isValidAutor">
               <mat-form-field id="nomeAutor" appearance="fill">
                 <mat-label>Autor</mat-label>
-                <input matInput [(ngModel)]="data.nomeAutor" #codAutor [value]="codAutor.value">
+                <input matInput [(ngModel)]="data.nomeAutor" [value]="autor.nomeAutor">
               </mat-form-field>
             </div>
 
@@ -83,7 +103,7 @@
               <div>
                 <mat-form-field id="codEditora" appearance="fill">
                   <mat-label>Código Editora</mat-label>
-                  <mat-select [(ngModel)]="data.codAutor">
+                  <mat-select [(ngModel)]="data.codEditora">
                     <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora">
                       {{Editora.nomeEditora}}
                     </mat-option>
@@ -137,7 +157,7 @@
             </div>
 
             <div class="f3Secao">
-              <div>
+              <div >
                 <mat-form-field id="codSecao" appearance="fill">
                   <mat-label>Código da Seção</mat-label>
                   <mat-select [(ngModel)]="data.secaoItem">

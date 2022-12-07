@@ -26,6 +26,7 @@ interface Tipo {
 
 export class ItemAcervoDialogComponent implements OnInit{
 
+  autor: Autor[] = []
 
   Autores: Autor[] = []
 
@@ -48,7 +49,9 @@ export class ItemAcervoDialogComponent implements OnInit{
 
   isChange!: boolean;
 
-  isValid!: boolean;
+  isValidAutor!: boolean;
+
+  isValidLocal!: boolean;
 
   constructor(public dialogref: MatDialogRef<ItemAcervoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ItemAcervo,
@@ -73,6 +76,7 @@ export class ItemAcervoDialogComponent implements OnInit{
     this.editoraService.getEditora().subscribe(data => {
       this.Editoras = data;
     })
+
     if(this.data.codItem != ''){
       this.isChange = true;
     }else{
@@ -80,8 +84,21 @@ export class ItemAcervoDialogComponent implements OnInit{
     }
   }
 
-  valor() {
-    this.isValid = true;
+  f3codAutor() {
+    console.log(this.data.codAutor)
+    if(this.isValidAutor != true){
+      this.isValidAutor = true;
+    } else{
+      this.isValidAutor = false;
+    }
+    this.autorService.getAutorById(this.data.codAutor).subscribe(data => {
+      this.autor = data;
+      console.log(this.autor)
+    })
+  }
+
+  f3codLocal() {
+
   }
 
   onCancel(){

@@ -20,12 +20,10 @@ export class AppCadastroAutorComponent implements OnInit {
     public dialog: MatDialog,
     public autorService: AutorService
     ) {
-      this.autorService.getAutor()
-    .subscribe(data => {
-      console.log(data);
-      this.autor = data
-    })
-
+      this.autorService.getAutor().subscribe(data => {
+        this.autor = data
+        console.log(data);
+      })
     }
 
   ngOnInit(): void {
@@ -51,16 +49,14 @@ export class AppCadastroAutorComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if(result !== undefined) {
         if(this.autor.map(a => a.codAutor).includes(result.codAutor)) {
-          this.autorService.updateAutor(result)
-          .subscribe(data => {
+          this.autorService.updateAutor(result).subscribe(data => {
             const index = this.autor.findIndex(a => a.codAutor === data.codAutor);
             this.autor[index] = data;
             this.tabelaAutor.renderRows();
             window.location.reload();
           })
         } else{
-          this.autorService.createAutor(result)
-          .subscribe(data => {
+          this.autorService.createAutor(result).subscribe(data => {
             console.log(result)
             this.autor.push(data)
             this.tabelaAutor.renderRows();
@@ -79,8 +75,7 @@ export class AppCadastroAutorComponent implements OnInit {
   }
 
   deleteAutor(codAutor: string) {
-    this.autorService.deleteAutor(codAutor)
-    .subscribe(() => {
+    this.autorService.deleteAutor(codAutor).subscribe(() => {
       this.autor = this.autor.filter(a => a.codAutor != codAutor);
       window.location.reload();
     })
