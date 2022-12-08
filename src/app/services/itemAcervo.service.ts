@@ -21,6 +21,10 @@ export class ItemAcervoService {
     return this.http.get<ItemAcervo[]>(this.itemAcervoApiUrl)
   }
 
+  getItemAcervoById(codItem: string) {
+    return this.http.get<ItemAcervo[]>(`${this.itemAcervoApiUrl}/${codItem}`)
+  }
+
   createItemAcervo(itemAcervo: ItemAcervo): Observable<ItemAcervo> {
     return this.http.post<ItemAcervo>(this.itemAcervoApiUrl, {
       codLocal: itemAcervo.codLocal,

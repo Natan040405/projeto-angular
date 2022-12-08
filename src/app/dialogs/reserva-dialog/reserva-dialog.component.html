@@ -21,22 +21,40 @@
 
         <div class="f3Item">
 
-          <div>
-            <mat-form-field id="codItem" appearance="fill">
-              <mat-label>Código do Item</mat-label>
-              <mat-select>
-                  <mat-option id="tipo" *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem">
-                    {{ItemAcervo.nomeItem}}
+          <div *ngIf="!isValidItem">
+            <mat-form-field id='codLocal' appearance="fill">
+              <mat-label>Código do Local</mat-label>
+              <mat-select [(ngModel)]="data.codItem">
+                  <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="itemAcervo.codItem" (click)="f3codItem()">
+                    {{ItemAcervo.codItem}} / / {{ItemAcervo.nomeItem}}
                   </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
+
+            <div *ngIf="isValidItem">
+              <mat-form-field (click)="f3codItem()" id='codLocal' appearance="fill">
+                <mat-label>Código do Item</mat-label>
+                <mat-select [(ngModel)]="data.codLocal">
+                    <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="itemAcervo.codItem">
+                      {{data.codItem}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
         </div>
 
-        <div>
+        <div *ngIf="!isValidItem">
           <mat-form-field id="nomeItem" appearance="fill">
             <mat-label>Item</mat-label>
             <input matInput [(ngModel)]="data.nomeItemReserva">
+          </mat-form-field>
+        </div>
+
+        <div *ngIf="isValidItem">
+          <mat-form-field id="nomeItem" appearance="fill">
+            <mat-label>Item</mat-label>
+            <input matInput [(ngModel)]="data.nomeItemReserva" [value]="data.nomeItem">
           </mat-form-field>
         </div>
 

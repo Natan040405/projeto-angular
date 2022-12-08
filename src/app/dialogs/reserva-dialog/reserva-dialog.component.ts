@@ -21,6 +21,10 @@ export class ReservaDialogComponent implements OnInit {
 
   isChange!: boolean;
 
+  isValidItem!: boolean;
+
+  itemAcervo: ItemAcervo[] = []
+
   ItensAcervo: ItemAcervo[] = []
 
   Leitores: Leitor[] = []
@@ -43,6 +47,18 @@ export class ReservaDialogComponent implements OnInit {
     })
     this.leitorService.getLeitor().subscribe(data => {
       this.Leitores = data;
+    })
+  }
+
+  f3codItem() {
+    if(this.isValidItem != true){
+      this.isValidItem = true;
+    } else {
+      this.isValidItem = false;
+    }
+    this.itemAcervoService.getItemAcervoById(this.data.codItemReserva).subscribe(data => {
+      this.itemAcervo = data;
+      console.log(this.itemAcervo)
     })
   }
 
