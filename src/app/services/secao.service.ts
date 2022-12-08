@@ -16,6 +16,10 @@ export class SecaoService{
     return this.http.get<Secao[]>(this.secaoApiUrl)
   }
 
+  getSecaoById(codSecao: string) {
+    return this.http.get<Secao[]>(`${this.secaoApiUrl}/${codSecao}`)
+  }
+
   createSecao(secao: Secao): Observable<Secao> {
     return this.http.post<Secao>(this.secaoApiUrl, {
       nomeSecao: secao.nomeSecao,

@@ -26,31 +26,41 @@
 
 
             <div class="f3Local">
-              <div>
+
+              <div *ngIf="!isValidLocal">
                 <mat-form-field id='codLocal' appearance="fill">
                   <mat-label>Código do Local</mat-label>
                   <mat-select [(ngModel)]="data.codLocal">
                       <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal" (click)="f3codLocal()">
-                        {{Local.nomeLocal}}
-                      </mat-option>
-                  </mat-select>
-                </mat-form-field>
-
-                <mat-form-field (click)="f3codLocal()" id='codLocal' appearance="fill">
-                  <mat-label>Código do Local</mat-label>
-                  <mat-select [(ngModel)]="data.codLocal">
-                      <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal">
-                        {{Local.nomeLocal}}
+                        {{Local.codLocal}} / / {{Local.nomeLocal}}
                       </mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
+
+                <div *ngIf="isValidLocal">
+                  <mat-form-field (click)="f3codLocal()" id='codLocal' appearance="fill">
+                    <mat-label>Código do Local</mat-label>
+                    <mat-select [(ngModel)]="data.codLocal">
+                        <mat-option *ngFor="let Local of Locais" [value]="Local.codLocal">
+                          {{data.codLocal}}
+                        </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
             </div>
 
-            <div>
+            <div *ngIf="!isValidLocal">
               <mat-form-field id="nomeLocal" appearance="fill">
                 <mat-label>Nome Local</mat-label>
                 <input matInput [(ngModel)]="data.nomeLocal">
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="isValidLocal">
+              <mat-form-field id="nomeLocal" appearance="fill">
+                <mat-label>Nome Local</mat-label>
+                <input matInput [(ngModel)]="data.nomeLocal" [value]="local.nomeLocal">
               </mat-form-field>
             </div>
 
@@ -100,22 +110,42 @@
             </div>
 
             <div class="f3Editora">
-              <div>
+
+              <div *ngIf="!isValidEditora">
                 <mat-form-field id="codEditora" appearance="fill">
                   <mat-label>Código Editora</mat-label>
                   <mat-select [(ngModel)]="data.codEditora">
-                    <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora">
-                      {{Editora.nomeEditora}}
+                    <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora" (click)="f3codEditora()">
+                      {{Editora.codEditora}} / / {{Editora.nomeEditora}}
                     </mat-option>
                 </mat-select>
                 </mat-form-field>
               </div>
+
+              <div *ngIf="isValidEditora">
+                <mat-form-field id="codEditora" appearance="fill" (click)="f3codEditora()">
+                  <mat-label>Código Editora</mat-label>
+                  <mat-select>
+                    <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora">
+                      {{data.codEditora}}
+                    </mat-option>
+                </mat-select>
+                </mat-form-field>
+              </div>
+
             </div>
 
-            <div>
+            <div *ngIf="!isValidEditora">
               <mat-form-field id="nomeEditora" appearance="fill">
                 <mat-label>Editora</mat-label>
                 <input matInput [(ngModel)]="data.nomeEditora">
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="isValidEditora">
+              <mat-form-field id="nomeEditora" appearance="fill">
+                <mat-label>Editora</mat-label>
+                <input matInput [(ngModel)]="data.nomeEditora" [value]="editora.nomeEditora">
               </mat-form-field>
             </div>
 
@@ -157,22 +187,40 @@
             </div>
 
             <div class="f3Secao">
-              <div >
+              <div *ngIf="!isValidSecao">
                 <mat-form-field id="codSecao" appearance="fill">
                   <mat-label>Código da Seção</mat-label>
                   <mat-select [(ngModel)]="data.secaoItem">
+                      <mat-option *ngFor="let Secao of Secoes" [matTooltip]="Secao.nomeSecao" [value]="Secao.codSecao" (click)="f3codSecao()">
+                        {{Secao.codSecao}}
+                      </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <div *ngIf="isValidSecao">
+                <mat-form-field id="codSecao" appearance="fill" (click)="f3codSecao()">
+                  <mat-label>Código da Seção</mat-label>
+                  <mat-select [(ngModel)]="data.secaoItem">
                       <mat-option *ngFor="let Secao of Secoes" [value]="Secao.codSecao" >
-                        {{Secao.nomeSecao}}
+                        {{data.secaoItem}}
                       </mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
             </div>
 
-            <div>
+            <div *ngIf="!isValidSecao">
               <mat-form-field id="nomeSecao" appearance="fill">
                 <mat-label>Seção</mat-label>
                 <input matInput >
+              </mat-form-field>
+            </div>
+
+            <div *ngIf="isValidSecao">
+              <mat-form-field id="nomeSecao" appearance="fill">
+                <mat-label>Seção</mat-label>
+                <input matInput [value]="secao.nomeSecao">
               </mat-form-field>
             </div>
 

@@ -28,6 +28,12 @@ export class ItemAcervoDialogComponent implements OnInit{
 
   autor: Autor[] = []
 
+  local: Local[] = []
+
+  editora: Editora[] = []
+
+  secao: Secao[] = []
+
   Autores: Autor[] = []
 
   ItensAcervo: ItemAcervo[] = []
@@ -52,6 +58,10 @@ export class ItemAcervoDialogComponent implements OnInit{
   isValidAutor!: boolean;
 
   isValidLocal!: boolean;
+
+  isValidEditora!: boolean;
+
+  isValidSecao!: boolean;
 
   constructor(public dialogref: MatDialogRef<ItemAcervoDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ItemAcervo,
@@ -85,7 +95,6 @@ export class ItemAcervoDialogComponent implements OnInit{
   }
 
   f3codAutor() {
-    console.log(this.data.codAutor)
     if(this.isValidAutor != true){
       this.isValidAutor = true;
     } else{
@@ -98,7 +107,39 @@ export class ItemAcervoDialogComponent implements OnInit{
   }
 
   f3codLocal() {
+    if(this.isValidLocal != true) {
+      this.isValidLocal = true;
+    } else {
+      this.isValidLocal = false;
+    }
+    this.localService.getLocalById(this.data.codLocal).subscribe(data => {
+      this.local = data;
+      console.log(this.local)
+    })
+  }
 
+  f3codEditora() {
+    if(this.isValidEditora != true) {
+      this.isValidEditora = true;
+    } else {
+      this.isValidEditora = false;
+    }
+    this.editoraService.getEditoraById(this.data.codEditora).subscribe(data => {
+      this.editora = data;
+      console.log(this.data.codEditora)
+      console.log(this.editora)
+    })
+  }
+
+  f3codSecao() {
+    if(this.isValidSecao != true) {
+      this.isValidSecao = true;
+    } else {
+      this.isValidSecao = false;
+    }
+    this.secaoService.getSecaoById(this.data.secaoItem).subscribe(data => {
+      this.secao = data;
+    })
   }
 
   onCancel(){

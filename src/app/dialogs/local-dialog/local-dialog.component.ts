@@ -1,4 +1,3 @@
-import { Dialog } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import Local from "src/app/models/local";
