@@ -125,7 +125,7 @@
               <div *ngIf="isValidEditora">
                 <mat-form-field id="codEditora" appearance="fill" (click)="f3codEditora()">
                   <mat-label>Código Editora</mat-label>
-                  <mat-select>
+                  <mat-select [(ngModel)]="data.codEditora">
                     <mat-option *ngFor="let Editora of Editoras" [value]="Editora.codEditora">
                       {{data.codEditora}}
                     </mat-option>

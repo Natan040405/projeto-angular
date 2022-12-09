@@ -22,10 +22,10 @@
         <div class="f3Item">
 
           <div *ngIf="!isValidItem">
-            <mat-form-field id='codLocal' appearance="fill">
-              <mat-label>Código do Local</mat-label>
+            <mat-form-field id='codItem' appearance="fill">
+              <mat-label>Código do Item</mat-label>
               <mat-select [(ngModel)]="data.codItem">
-                  <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="itemAcervo.codItem" (click)="f3codItem()">
+                  <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem" (click)="f3codItem()">
                     {{ItemAcervo.codItem}} / / {{ItemAcervo.nomeItem}}
                   </mat-option>
               </mat-select>
@@ -33,10 +33,10 @@
           </div>
 
             <div *ngIf="isValidItem">
-              <mat-form-field (click)="f3codItem()" id='codLocal' appearance="fill">
+              <mat-form-field (click)="f3codItem()" id='codItem' appearance="fill">
                 <mat-label>Código do Item</mat-label>
-                <mat-select [(ngModel)]="data.codLocal">
-                    <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="itemAcervo.codItem">
+                <mat-select [(ngModel)]="data.codItem">
+                    <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem">
                       {{data.codItem}}
                     </mat-option>
                 </mat-select>
@@ -54,7 +54,7 @@
         <div *ngIf="isValidItem">
           <mat-form-field id="nomeItem" appearance="fill">
             <mat-label>Item</mat-label>
-            <input matInput [(ngModel)]="data.nomeItemReserva" [value]="data.nomeItem">
+            <input matInput [(ngModel)]="data.nomeItemReserva" [value]="itemAcervo.nomeItem">
           </mat-form-field>
         </div>
 

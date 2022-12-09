@@ -19,15 +19,15 @@ interface mov{
 
 export class ReservaDialogComponent implements OnInit {
 
-  isChange!: boolean;
-
-  isValidItem!: boolean;
-
   itemAcervo: ItemAcervo[] = []
 
   ItensAcervo: ItemAcervo[] = []
 
   Leitores: Leitor[] = []
+
+  isChange!: boolean;
+
+  isValidItem!: boolean;
 
   movs: mov[] = [
     {value: 'Reservar', viewValue: 'Reservar'},
@@ -57,8 +57,13 @@ export class ReservaDialogComponent implements OnInit {
       this.isValidItem = false;
     }
     this.itemAcervoService.getItemAcervoById(this.data.codItemReserva).subscribe(data => {
-      this.itemAcervo = data;
-      console.log(this.itemAcervo)
+      console.log(data.nomeItem)
+      this.itemAcervo = [data];
+
+      if(data!=null){
+        this.data.nomeItemReserva = data.nomeItem
+
+      }
     })
   }
 

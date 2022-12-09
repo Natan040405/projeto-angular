@@ -8,8 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import ItemAcervo from "src/app/models/itemAcervo";
 import Secao from "src/app/models/secao";
 import Autor from 'src/app/models/autor';
-import Local  from 'src/app/models/local';
 import Editora from 'src/app/models/editora';
+import Local from 'src/app/models/local';
 
 interface Tipo {
   value: string;
@@ -28,7 +28,7 @@ export class ItemAcervoDialogComponent implements OnInit{
 
   autor: Autor[] = []
 
-  local: Local[] = []
+  local: Local[]=[]
 
   editora: Editora[] = []
 
@@ -87,6 +87,13 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.Editoras = data;
     })
 
+    if(this.ItensAcervo.map(a=> a.codItem)){
+      this.isValidLocal = true;
+      this.isValidAutor = true;
+      this.isValidSecao = true;
+      this.isValidEditora = true;
+    }
+
     if(this.data.codItem != ''){
       this.isChange = true;
     }else{
@@ -112,9 +119,12 @@ export class ItemAcervoDialogComponent implements OnInit{
     } else {
       this.isValidLocal = false;
     }
-    this.localService.getLocalById(this.data.codLocal).subscribe(data => {
-      this.local = data;
-      console.log(this.local)
+    this.localService.getLocalById(this.data.codLocal).subscribe(dataValue => {
+      this.local = [dataValue];
+      if (dataValue!=null){
+        this.data.nomeLocal=dataValue.nomeLocal;
+        console.log(this.data.nomeLocal)
+      }
     })
   }
 
@@ -126,9 +136,10 @@ export class ItemAcervoDialogComponent implements OnInit{
     }
     this.editoraService.getEditoraById(this.data.codEditora).subscribe(data => {
       this.editora = data;
-      console.log(this.data.codEditora)
+      console.log(this.data)
       console.log(this.editora)
     })
+    console.log(this.data)
   }
 
   f3codSecao() {

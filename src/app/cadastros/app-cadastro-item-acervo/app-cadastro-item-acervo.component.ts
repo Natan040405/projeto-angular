@@ -1,9 +1,9 @@
 import { ItemAcervoService } from './../../services/itemAcervo.service';
-import { ItemAcervoDialogComponent } from './../../dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import ItemAcervo from 'src/app/models/itemAcervo';
 import { MatTable } from '@angular/material/table';
+import { ItemAcervoDialogComponent } from 'src/app/dialogs/itemAcervo-dialog/itemAcervo-dialog.component';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class AppCadastroItemAcervoComponent implements OnInit{
 
   constructor(
     public dialog: MatDialog,
-    public itemAcervoService: ItemAcervoService
+    public itemAcervoService: ItemAcervoService,
     ){
       this.itemAcervoService.getItemAcervo()
     .subscribe(data => {
@@ -57,12 +57,13 @@ export class AppCadastroItemAcervoComponent implements OnInit{
     dialogRef.afterClosed().subscribe(result => {
       if(result !== undefined) {
         if(this.itemAcervo.map(a=> a.codItem).includes(result.codItem)) {
+          console.log(result);
           this.itemAcervoService.updateItemAcervo(result)
           .subscribe(data=> {
             const index = this.itemAcervo.findIndex(a => a.codItem === data.codItem);
             this.itemAcervo[index] = data;
+            console.log(data);
             this.tabelaItem.renderRows();
-            window.location.reload();
           })
         } else{
           this.itemAcervoService.createItemAcervo(result)
@@ -70,7 +71,6 @@ export class AppCadastroItemAcervoComponent implements OnInit{
             this.itemAcervo.push(data)
             console.log(data);
             this.tabelaItem.renderRows();
-            window.location.reload();
           })
         }
       }
