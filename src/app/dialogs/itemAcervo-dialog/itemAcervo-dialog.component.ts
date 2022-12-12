@@ -74,6 +74,7 @@ export class ItemAcervoDialogComponent implements OnInit{
      }
 
   ngOnInit(): void {
+
     this.autorService.getAutor().subscribe((data:any) => {
       this.Autores = data;
     })
@@ -87,15 +88,12 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.Editoras = data;
     })
 
-    if(this.ItensAcervo.map(a=> a.codItem)){
-      this.isValidLocal = true;
-      this.isValidAutor = true;
-      this.isValidSecao = true;
-      this.isValidEditora = true;
-    }
-
     if(this.data.codItem != ''){
       this.isChange = true;
+      this.isValidLocal = true;
+      this.isValidAutor = true;
+      this.isValidSecao = false;
+      this.isValidEditora = true;
     }else{
       this.isChange = false;
     }
@@ -108,8 +106,12 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.isValidAutor = false;
     }
     this.autorService.getAutorById(this.data.codAutor).subscribe(data => {
-      this.autor = data;
-      console.log(this.autor)
+      this.autor = [data];
+      if (data != null){
+        this.data.nomeAutor = data.nomeAutor;
+        console.log(this.data.nomeAutor)
+      }
+
     })
   }
 
@@ -123,7 +125,6 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.local = [dataValue];
       if (dataValue!=null){
         this.data.nomeLocal=dataValue.nomeLocal;
-        console.log(this.data.nomeLocal)
       }
     })
   }
@@ -135,19 +136,15 @@ export class ItemAcervoDialogComponent implements OnInit{
       this.isValidEditora = false;
     }
     this.editoraService.getEditoraById(this.data.codEditora).subscribe(data => {
-      this.editora = data;
-      console.log(this.data)
-      console.log(this.editora)
+      this.editora = [data];
+      if(data != null){
+        this.data.nomeEditora = data.nomeEditora;
+      }
     })
-    console.log(this.data)
   }
 
   f3codSecao() {
-    if(this.isValidSecao != true) {
-      this.isValidSecao = true;
-    } else {
-      this.isValidSecao = false;
-    }
+    this.isValidSecao = true;
     this.secaoService.getSecaoById(this.data.secaoItem).subscribe(data => {
       this.secao = data;
     })

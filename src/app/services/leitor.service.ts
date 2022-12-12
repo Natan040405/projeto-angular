@@ -17,6 +17,10 @@ export class LeitorService {
     return this.http.get<Leitor[]>(this.leitorApiUrl)
   }
 
+  getLeitorById(codLeitor: string) {
+    return this.http.get<Leitor>(`${this.leitorApiUrl}/${codLeitor}`)
+  }
+
   createLeitor(leitor: Leitor): Observable<Leitor> {
     return this.http.post<Leitor>(this.leitorApiUrl, {
       nomeLeitor: leitor.nomeLeitor,

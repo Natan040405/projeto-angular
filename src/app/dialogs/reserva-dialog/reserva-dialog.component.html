@@ -24,7 +24,7 @@
           <div *ngIf="!isValidItem">
             <mat-form-field id='codItem' appearance="fill">
               <mat-label>Código do Item</mat-label>
-              <mat-select [(ngModel)]="data.codItem">
+              <mat-select [(ngModel)]="data.codItemReserva">
                   <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem" (click)="f3codItem()">
                     {{ItemAcervo.codItem}} / / {{ItemAcervo.nomeItem}}
                   </mat-option>
@@ -35,26 +35,19 @@
             <div *ngIf="isValidItem">
               <mat-form-field (click)="f3codItem()" id='codItem' appearance="fill">
                 <mat-label>Código do Item</mat-label>
-                <mat-select [(ngModel)]="data.codItem">
+                <mat-select [(ngModel)]="data.codItemReserva">
                     <mat-option *ngFor="let ItemAcervo of ItensAcervo" [value]="ItemAcervo.codItem">
-                      {{data.codItem}}
+                      {{data.codItemReserva}}
                     </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
         </div>
 
-        <div *ngIf="!isValidItem">
+        <div>
           <mat-form-field id="nomeItem" appearance="fill">
             <mat-label>Item</mat-label>
             <input matInput [(ngModel)]="data.nomeItemReserva">
-          </mat-form-field>
-        </div>
-
-        <div *ngIf="isValidItem">
-          <mat-form-field id="nomeItem" appearance="fill">
-            <mat-label>Item</mat-label>
-            <input matInput [(ngModel)]="data.nomeItemReserva" [value]="itemAcervo.nomeItem">
           </mat-form-field>
         </div>
 
@@ -86,12 +79,23 @@
 
         <div class="f3Leitor">
 
-          <div>
+          <div *ngIf="!isValidLeitor">
             <mat-form-field id="codLeitor" appearance="fill">
               <mat-label>código do Leitor</mat-label>
-              <mat-select>
+              <mat-select [(ngModel)]="data.codLeitor">
+                  <mat-option id="tipo" *ngFor="let Leitor of Leitores" [value]="Leitor.codLeitor" (click)="f3codLeitor()">
+                    {{Leitor.codLeitor}} / / {{Leitor.nomeLeitor}}
+                  </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div *ngIf="isValidLeitor">
+            <mat-form-field id="codLeitor" appearance="fill" (click)="f3codLeitor()">
+              <mat-label>código do Leitor</mat-label>
+              <mat-select [(ngModel)]="data.codLeitor">
                   <mat-option id="tipo" *ngFor="let Leitor of Leitores" [value]="Leitor.codLeitor">
-                    {{Leitor.nomeLeitor}}
+                    {{data.codLeitor}}
                   </mat-option>
               </mat-select>
             </mat-form-field>

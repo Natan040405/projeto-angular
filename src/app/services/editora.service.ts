@@ -16,7 +16,7 @@ export class EditoraService {
   }
 
   getEditoraById(codEditora: string) {
-    return this.http.get<Editora[]>(`${this.editoraApiUrl}/${codEditora}`);
+    return this.http.get<Editora>(`${this.editoraApiUrl}/${codEditora}`);
   }
 
   createEditora(editora: Editora): Observable<Editora> {

@@ -187,7 +187,7 @@
             </div>
 
             <div class="f3Secao">
-              <div *ngIf="!isValidSecao">
+              <div >
                 <mat-form-field id="codSecao" appearance="fill">
                   <mat-label>Código da Seção</mat-label>
                   <mat-select [(ngModel)]="data.secaoItem">
@@ -198,7 +198,7 @@
                 </mat-form-field>
               </div>
 
-              <div *ngIf="isValidSecao">
+              <!-- <div *ngIf="isValidSecao">
                 <mat-form-field id="codSecao" appearance="fill" (click)="f3codSecao()">
                   <mat-label>Código da Seção</mat-label>
                   <mat-select [(ngModel)]="data.secaoItem">
@@ -207,7 +207,7 @@
                       </mat-option>
                   </mat-select>
                 </mat-form-field>
-              </div>
+              </div> -->
             </div>
 
             <div *ngIf="!isValidSecao">
