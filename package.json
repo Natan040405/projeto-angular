@@ -23,6 +23,7 @@
     "@mui/icons-material": "^5.10.15",
     "jquery": "^3.6.1",
     "ng-select2-component": "^10.0.0",
+    "ngx-mask": "^14.2.4",
     "rxjs": "~7.5.0",
     "select2": "^4.1.0-rc.0",
     "tslib": "^2.3.0",

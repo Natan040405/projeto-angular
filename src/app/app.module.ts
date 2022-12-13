@@ -43,7 +43,7 @@ import { ItemAcervoDialogComponent } from './dialogs/itemAcervo-dialog/itemAcerv
 import { LeitorDialogComponent } from './dialogs/leitor-dialog/leitor-dialog.component';
 import { LocalDialogComponent } from './dialogs/local-dialog/local-dialog.component';
 import { ReservaDialogComponent } from './dialogs/reserva-dialog/reserva-dialog.component';
-
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
     declarations: [
@@ -95,6 +95,9 @@ import { ReservaDialogComponent } from './dialogs/reserva-dialog/reserva-dialog.
         MatDialogModule,
         MatTooltipModule,
         FormsModule,
+        NgxMaskModule.forRoot({
+            dropSpecialCharacters: true
+        }),
     ]
 })
 export class AppModule { }
