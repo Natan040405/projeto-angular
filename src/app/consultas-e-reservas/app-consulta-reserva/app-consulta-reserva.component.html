@@ -1,4 +1,83 @@
-<section class="consultaReserva">
+<section class="cadAutor">
+  <div class="header">
+    <h1 class="titAutor">Consulta reserva</h1>
+    <div id="nomeItem">
+      <button mat-raised-button color="primary" id="buscar">buscar</button>
+      <mat-form-field  appearance="fill">
+        <mat-label>nome Item</mat-label>
+        <input matInput (keyup)="search($event)" #input>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="tabela">
+    <table mat-table #tabelaAutor [dataSource]="consultaReserva" class="tabelaConsultaReserva">
+      <ng-container matColumnDef="codItem">
+        <th mat-header-cell *matHeaderCellDef> Cód. Item </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.codItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeItem">
+        <th mat-header-cell *matHeaderCellDef> Item </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.nomeItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codLeitor">
+        <th mat-header-cell *matHeaderCellDef> Cód. Leitor </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.codLeitor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="localizacao">
+        <th mat-header-cell *matHeaderCellDef> Localização </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.localizacao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipoItem">
+        <th mat-header-cell *matHeaderCellDef> Tipo do Item </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.tipoItem}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codAutor">
+        <th mat-header-cell *matHeaderCellDef> Cód. Autor </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.codAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeAutor">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.nomeAutor}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codSecao">
+        <th mat-header-cell *matHeaderCellDef> Cód. Seção </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.codSecao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nomeSecao">
+        <th mat-header-cell *matHeaderCellDef> Seção </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.nomeSecao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="situacao">
+        <th mat-header-cell *matHeaderCellDef> Situação </th>
+        <td mat-cell *matCellDef="let consultaReserva"> {{consultaReserva.situacao}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let consultaReserva">
+          <button mat-icon-button >
+            <mat-icon>edit</mat-icon>
+          </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</section>
+
+<!-- <section class="consultaReserva">
   <form class="frmConsultaReserva">
     <div>
        <h1 class="titConsultaReserva">Consultar Reserva</h1>
@@ -73,7 +152,7 @@
         </div>
 
       </div>
-      <!-- fim da coluna01 -->
+      fim da coluna01
 
       <div class="coluna02">
 
@@ -120,4 +199,4 @@
 
     <app-app-botao-salvar-excluir></app-app-botao-salvar-excluir>
   </form>
-</section>
+</section> -->

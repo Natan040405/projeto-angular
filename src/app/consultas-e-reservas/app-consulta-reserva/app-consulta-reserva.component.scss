@@ -1,77 +1,132 @@
-
-
-.consultaReserva{
-  width: 98%;
-  padding: 1.7%;
-  margin: 0 auto;
-}
-.frmConsultaReserva{
-  background-color: white;
-  padding: 16px;
+.cadAutor{
+  background-color: #fff;
+  padding: 1.5rem;
+  width: 95%;
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  min-height: 35rem;
 }
-.linha{
-  display: flex;
-  flex-flow: row wrap;
-}
-.coluna01 {
-  width: 48%;
-  right: 1%;
-  position: relative;
-}
-.coluna02{
-  width: 48%;
-  right: 8%;
-  position: relative;
-}
-.titConsultaReserva{
+.titAutor{
   font-family: 'Calibri', sans-serif ;
   font-size: 2rem;
 }
-.f3Item{
-  div{
-    display: inline-block;
-    position: relative;
-    margin-right: 0.5rem;
+.tabela{
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgb(0, 0, 0, 0.3);
+}
+#nomeItem{
+  left: 19rem;
+  position: relative;
+  #buscar{
+    margin: 1rem;
+  }
+  mat-form-field{
+    width: 20rem;
   }
 }
-.f3Leitor{
-  div{
-    display: inline-block;
-    position: relative;
-    margin-right: 0.5rem;
-  }
+th{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
 }
-.f3Autor{
-  div{
-    display: inline-block;
-    position: relative;
-    margin-right: 0.5rem;
-  }
+td{
+  z-index: 8;
 }
-.f3Secao{
-  div{
-    display: inline-block;
-    position: relative;
-    margin-right: 0.5rem;
+
+  h1{
+    margin: 0;
+  }
+.header{
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tabela{
+  width: 100%;
+  max-height: 26rem;
+  overflow-y: auto;
+  table{
+    width: 100%;
   }
 }
 
+// .consultaReserva{
+//   width: 98%;
+//   padding: 1.7%;
+//   margin: 0 auto;
+// }
+// .frmConsultaReserva{
+//   background-color: white;
+//   padding: 16px;
+//   border-radius: 4px;
+//   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+// }
+// .linha{
+//   display: flex;
+//   flex-flow: row wrap;
+// }
+// .coluna01 {
+//   width: 48%;
+//   right: 1%;
+//   position: relative;
+// }
+// .coluna02{
+//   width: 48%;
+//   right: 8%;
+//   position: relative;
+// }
+// .titConsultaReserva{
+//   font-family: 'Calibri', sans-serif ;
+//   font-size: 2rem;
+// }
+// .f3Item{
+//   div{
+//     display: inline-block;
+//     position: relative;
+//     margin-right: 0.5rem;
+//   }
+// }
+// .f3Leitor{
+//   div{
+//     display: inline-block;
+//     position: relative;
+//     margin-right: 0.5rem;
+//   }
+// }
+// .f3Autor{
+//   div{
+//     display: inline-block;
+//     position: relative;
+//     margin-right: 0.5rem;
+//   }
+// }
+// .f3Secao{
+//   div{
+//     display: inline-block;
+//     position: relative;
+//     margin-right: 0.5rem;
+//   }
+// }
 
-.f3-item{
-  cursor: pointer;
-  border-radius:100%;
-}
-.f3-leitor{
-  cursor: pointer;
-  border-radius: 100%;
-}
-.f3-autor{
-  cursor: pointer;
-  border-radius:100%;
-}
-.f3-secao{
-  cursor: pointer;
-  border-radius:100%;
-}
+
+// .f3-item{
+//   cursor: pointer;
+//   border-radius:100%;
+// }
+// .f3-leitor{
+//   cursor: pointer;
+//   border-radius: 100%;
+// }
+// .f3-autor{
+//   cursor: pointer;
+//   border-radius:100%;
+// }
+// .f3-secao{
+//   cursor: pointer;
+//   border-radius:100%;
+// }

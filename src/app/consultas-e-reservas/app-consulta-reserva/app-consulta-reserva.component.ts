@@ -1,24 +1,36 @@
-import { Component } from '@angular/core';
+import { ConsultaService } from './../../services/consultas.service';
+import { Component, OnInit } from '@angular/core';
+import ConsultaReserva from 'src/app/models/consulta';
+import { MatTableDataSource } from '@angular/material/table';
 
-interface Tipo {
-  value: string;
-  viewValue: string;
-}
-
+const consultaReserva: ConsultaReserva[] = []
 @Component({
   selector: 'app-consulta-reserva',
   templateUrl: './app-consulta-reserva.component.html',
-  styleUrls: ['./app-consulta-reserva.component.scss']
+  styleUrls: ['./app-consulta-reserva.component.scss'],
+  providers: [ConsultaService]
 })
-export class AppConsultaReservaComponent {
+export class AppConsultaReservaComponent implements OnInit{
 
-  Tipos: Tipo[] = [
-    {value:'livro-0' , viewValue:'Livro'},
-    {value:'revista-1' , viewValue:'Revista'},
-    {value:'jornal-2' , viewValue:'Jornal'},
-    {value:'dvdcd-3' , viewValue:'DVD/CD'},
-    {value:'folheto-4' , viewValue:'Folheto'},
-    {value:'artigo-5' , viewValue:'Artigo'},
-  ];
+  consultaReserva: ConsultaReserva[] = [];
+  displayedColumns: string[] = ['codItem', 'nomeItem', 'codLeitor', 'localizacao',
+   'tipoItem', 'codAutor', 'nomeAutor','codSecao', 'nomeSecao', 'situacao', 'actions'];
+   consulta = new MatTableDataSource(consultaReserva)
+   search(event: Event) {
+    const searchValue  = (event.target as HTMLInputElement).value;
+    this.consulta.filter = searchValue.trim().toLowerCase();
+  }
+
+  constructor(public consultaService: ConsultaService) {
+
+  }
+  ngOnInit(): void {
+    console.log(this.consultaReserva)
+    this.consultaService.GetByFilter()
+    .subscribe(consulta => {
+      this.consultaReserva = consulta
+    })
+  }
+
 
 }
